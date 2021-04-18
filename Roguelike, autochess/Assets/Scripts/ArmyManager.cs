@@ -65,5 +65,58 @@ public class ArmyManager : Singleton<ArmyManager>
         ActivePlayerUnits.Remove(unit);
 
         //UIManagerScript.UpdateArmyCountDisplay(ActivePlayerUnit.Count, MaxArmySize);
+        //if(GameManagerScript.InCombat)
+        //{
+        //    CheckIfEnemyWonRound();
+        //}
     }
+    //public virtual void CheckIfEnemyWonRound()
+    //{
+    //    if (ActivePlayerPawns.Count <= 0)
+    //    {
+    //        //enemy has won :(
+    //        GameManagerScript.EnemyWonRound();
+    //    }
+    //}
+
+
+    public virtual GameObject SearchForEnemyTarget(Vector3 myPosiotion)
+    {
+        GameObject target = null;
+
+        float nearestTargetDistance = 999;
+
+        foreach(GameObject enemyUnit in ActiveEnemyUnits)
+        {
+            float distance = Vector3.Distance(myPosiotion, enemyUnit.transform.position);
+
+            if(distance < nearestTargetDistance)
+            {
+                target = enemyUnit;
+                nearestTargetDistance = distance;
+            }
+        }
+        return target;
+    }
+
+    public virtual GameObject SearchForPlayerTarget(Vector3 myPosiotion)
+    {
+        GameObject target = null;
+
+        float nearestTargetDistance = 999;
+
+        foreach (GameObject playerUnit in ActivePlayerUnits)
+        {
+            float distance = Vector3.Distance(myPosiotion, playerUnit.transform.position);
+
+            if (distance < nearestTargetDistance)
+            {
+                target = playerUnit;
+                nearestTargetDistance = distance;
+            }
+        }
+        return target;
+    }
+
+
 }

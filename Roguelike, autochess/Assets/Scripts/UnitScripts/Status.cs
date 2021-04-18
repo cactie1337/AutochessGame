@@ -33,5 +33,16 @@ public class Status : MonoBehaviour
     protected HealthAndMana HealthAndManaScript { get => healthAndManaScript; set => healthAndManaScript = value; }
     protected ArmyManager ArmyManagerScript { get => armyManagerScript; set => armyManagerScript = value; }
 
+    public virtual void Awake()
+    {
+        ArmyManagerScript = ArmyManager.Instance;
+        TargetingScript = GetComponent<Targeting>();
+        MovementScript = GetComponent<Movement>();
+        HomeBaseScript = GetComponent<HomeBase>();
+        HealthAndManaScript = GetComponent<HealthAndMana>();
 
+        IsDead = false;
+        IsPlayer = false;
+        InCombat = false;
+    }
 }
