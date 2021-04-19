@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class HomeBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private BoardTile tileScript;
+    private Movement movementScript;
+
+    protected BoardTile TileScript { get => tileScript; set => tileScript = value; }
+    protected Movement MovementScript { get => movementScript; set => movementScript = value; }
+
+    protected virtual void Awake()
     {
-        
+        MovementScript = GetComponent<Movement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void SetHomeBase(BoardTile tileScript)
     {
-        
+        TileScript = tileScript;
+    }
+
+    //This will only be called at the end of combat
+    public virtual void SendToHomeBase()
+    {
+        TileScript.ChangePawnOutOfCombat(gameObject);
     }
 }

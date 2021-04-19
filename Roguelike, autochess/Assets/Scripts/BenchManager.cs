@@ -76,23 +76,23 @@ public class BenchManager : Singleton<BenchManager>
         }
         return hasSpace;
     }
-    //public virtual bool AddNewUnitToBench(UnitStats unitStats, int goldCost)
-    //{
-    //    for (int i = 0; i < BenchSlotScripts.Count; i++)
-    //    {
-    //        if (!BenchSlotScripts[i].HasActiveUnit())
-    //        {
-    //            BenchSlotScripts[i].CreatePlayerUnit(unitStats, goldCost);
+    public virtual bool AddNewUnitToBench(UnitStats unitStats, int goldCost)
+    {
+        for (int i = 0; i < BenchSlotScripts.Count; i++)
+        {
+            if (!BenchSlotScripts[i].HasActiveUnit())
+            {
+                BenchSlotScripts[i].CreatePlayerUnit(unitStats, goldCost);
 
-    //            SynergyManagerScript.UnitAcquired(unitStats);
+                //SynergyManagerScript.UnitAcquired(unitStats);
 
-    //            CheckForCombination(unitStats);
+                //CheckForCombination(unitStats);
 
-    //            return true;
-    //        }
-    //    }
-    //    return false;
-    //}
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }

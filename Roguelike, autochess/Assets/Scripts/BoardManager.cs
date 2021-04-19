@@ -20,7 +20,7 @@ public class BoardManager : Singleton<BoardManager>
     [SerializeField]
     private List<BoardTile> boardTiles = new List<BoardTile>();
 
-    //private ArmyManagerScript armyManagerScript;
+    private ArmyManager armyManagerScript;
 
 
     protected Transform BoardTransform { get => boardTransform; set => boardTransform = value; }
@@ -28,33 +28,12 @@ public class BoardManager : Singleton<BoardManager>
     protected GameObject PlayerBoardTilePrefab { get => playerBoardTilePrefab; set => playerBoardTilePrefab = value; }
     protected GameObject EnemyBoardTilePrefab { get => enemyBoardTilePrefab; set => enemyBoardTilePrefab = value; }
     public List<BoardTile> BoardTiles { get => boardTiles; protected set => boardTiles = value; }
-    //protected ArmyManagerScript ArmyManagerS { get => armyManagerScript; set => armyManagerScript = value; }
+    protected ArmyManager ArmyManagerScript { get => armyManagerScript; set => armyManagerScript = value; }
 
     protected virtual void Awake()
     {
-        if (!BoardTransform)
-        {
-            Debug.LogError("Please drag your chess board transform into the ChessBoardManager script located on the Game Manager gameobject.");
-            return;
-        }
-
-        if (!PlayerBoardTilePrefab)
-        {
-            Debug.LogError("No player chess board tile prefab set in the ChessBoardManager script located on the Game Manager gameobject.");
-            return;
-        }
-
-        if (!EnemyBoardTilePrefab)
-        {
-            Debug.LogError("No enemy chess board tile prefab set in the ChessBoardManager script located on the Game Manager gameobject.");
-            return;
-        }
-        //ArmyManagerS = ArmyManagerScript.Instance;
-        //if (!ArmyManagerS)
-        //{
-        //    Debug.LogError("No ArmyManager script found, please add one to the game manager gameobject.");
-        //}
-
+        ArmyManagerScript = ArmyManager.Instance;
+       
         CreateBoardTiles();
     }
 
@@ -84,9 +63,7 @@ public class BoardManager : Singleton<BoardManager>
                     tileScript.Setup(counter, new Vector2(x, z), BoardTile.TileCategory.Enemy);
                     BoardTiles.Add(tileScript);
                 }
-
-                counter++;
-               
+                counter++;            
             }
         }
     }

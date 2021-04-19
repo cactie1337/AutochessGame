@@ -45,4 +45,30 @@ public class Status : MonoBehaviour
         IsPlayer = false;
         InCombat = false;
     }
+    public virtual void BeginCombat()
+    {
+        InCombat = true;
+        MovementScript.ResetPreviousTiles();
+        TargetingScript.SearchForNewTarget();
+    }
+    public virtual void EndCombat()
+    {
+        InCombat = false;
+    }
+    public virtual void ResetPawnAfterCombat()
+    {
+        IsDead = false;
+        ArmyManagerScript.AddActiveUnitToPlayerRoster(gameObject);
+        HomeBaseScript.SendToHomeBase();
+        HealthAndManaScript.ResetHealthAndMana();
+        gameObject.SetActive(true);
+    }
+    public virtual void SelfDestruct()
+    {
+        if (healthAndManaScript.HealthBarScript)
+            Destroy(HealthAndManaScript.HealthBarScript.gameObject);
+        MovementScript.CurrentTile.ClearActiveUnit();
+        Destroy(gameObject);
+    }
+
 }

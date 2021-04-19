@@ -79,24 +79,18 @@ public class Targeting : MonoBehaviour
     }
     public virtual void RangeCheck()
     {
-        //if we discover while checking the range that our target is now dead,
-        //find a new one!
         if (TargetStatus.IsDead)
         {
             SearchForNewTarget();
         }
 
-        //otherwise, check if the target is in range
-        //check range
         if (TargetIsInRange())
         {
-            //let auto attacking script know this pawn is ready to attack
-            //AutoAttackScript.ReadyToAttack = true;
+            AutoAttackScript.ReadyToAttack = true;
         }
         else
         {
-            //begin movement
-            //MovementScript.MoveOneTileToTarget();
+            MovementScript.MoveOneTileToTarget();
         }
     }
 

@@ -125,5 +125,116 @@ public class Movement : MonoBehaviour
         //set desired position
         DesiredPosition = tile.transform.position;
     }
+    protected struct TileMovementData
+    {
+        public BoardTile tile;
+        public float distance;
+    }
+    public virtual void MoveOneTileToTarget()
+    {
+        BoardTile tile = GetNearestTileClosestToTarget();
 
+        if (tile != null)
+        {
+            tile.ChangeUnitInCombat(gameObject);
+            Moving = true;
+            RotateUnit(tile.transform);
+        }
+        else
+        {
+
+        }
+    }
+    public virtual BoardTile GetNearestTileClosestToTarget()
+    {
+        if (TargetingScript.Target == null)
+            return null;
+
+        List<TileMovementData> nearbyTiles = new List<TileMovementData>();
+
+        for (int z = -1; z <= 1; z++)
+        {
+            int gridPositionZ = (int)GridPosition.y + z;
+            if (gridPositionZ < 0 || gridPositionZ >= 8)
+                continue;
+            for (int x = -1; x <= 1; x++)
+            {
+                int gridPositionX = (int)GridPosition.x + x;
+                if (gridPositionX < 0 || gridPositionX >= 8)
+                    continue;
+                int id = ConvertGridPositionToTileId(new Vector2(gridPositionX, gridPositionZ));
+
+                BoardTile tile = BoardManagerScript.BoardTiles[id];
+
+                Vector2 dir = TargetingScript.TargetsMovementScript.GridPosition - tile.GridPosition;
+
+                float distanceSqrMag = Vector2.SqrMagnitude(dir);
+
+                float distance = Vector3.Distance(TargetingScript.Target.transform.position, tile.transform.position);
+
+                TileMovementData tileData = new TileMovementData();
+                tileData.tile = tile;
+                tileData.distance = distanceSqrMag;
+
+                if(nearbyTiles.Count == 0)
+                {
+                    nearbyTiles.Add(tileData);
+                }
+                else
+                {
+                    bool inserted = false;
+
+                    for(int i = 0; i < nearbyTiles.Count; i++)
+                    {
+                        if(tileData.distance < nearbyTiles[i].distance)
+                        {
+                            nearbyTiles.Insert(i, tileData);
+                            inserted = true;
+                            break;
+                        }
+                    }
+
+                    if(!inserted)
+                    {
+                        nearbyTiles.Add(tileData);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < nearbyTiles.Count; i++)
+        {
+            if(PreviousTile1 != null && PreviousTile2 != null && PreviousTile3 != null)
+            {
+                if(nearbyTiles[i].tile == PreviousTile1 || nearbyTiles[i].tile == PreviousTile2 || nearbyTiles[i].tile == PreviousTile3)
+                {
+                    continue;
+                }
+            }
+
+            if(nearbyTiles[i].tile.ActiveUnit == null)
+            {
+                return nearbyTiles[i].tile;
+            }
+        }
+        TargetingScript.DelayedSearchForNewTarget(0.5f);
+
+        return null;
+
+    }
+    public virtual int ConvertGridPositionToTileId(Vector2 position)
+    {
+        int id = (int)((position.y * 8) + position.x);
+            return id;
+    }
+    public virtual void RotateUnit(Transform target)
+    {
+        transform.LookAt(target);
+    }
+    public virtual void ResetPreviousTiles()
+    {
+        PreviousTile1 = null;
+        PreviousTile2 = null;
+        PreviousTile3 = null;
+    }
+    
 }

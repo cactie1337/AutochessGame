@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRosterManager : MonoBehaviour
+public class EnemyRosterManager : Singleton<EnemyRosterManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private List<ArmyRoster> rosters;
+    public List<ArmyRoster> Rosters { get => rosters; protected set => rosters = value; }
 
-    // Update is called once per frame
-    void Update()
+    public virtual int TotalRosterCount()
     {
-        
+        return Rosters.Count;
     }
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Infernal 1 - 1 star
   m_EditorClassIdentifier: 
   name: Infernal1
-  icon: {fileID: 0}
-  unit: {fileID: 0}
+  icon: {fileID: 21300000, guid: ea70de4177ea7974dbc39b9c018f8041, type: 3}
+  unit: {fileID: 4490611297153463649, guid: 7b8ce02906af8204c9a740d719bf6a28, type: 3}
   starRating: 0
   unitQuality: 0
   upgradedUnit: {fileID: 11400000, guid: 6101af3410e41e9439f763cd415cffca, type: 2}

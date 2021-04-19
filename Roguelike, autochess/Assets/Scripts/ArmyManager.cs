@@ -63,21 +63,30 @@ public class ArmyManager : Singleton<ArmyManager>
     public virtual void RemoveActiveUnitFromPlayerRoster(GameObject unit)
     {
         ActivePlayerUnits.Remove(unit);
-
-        //UIManagerScript.UpdateArmyCountDisplay(ActivePlayerUnit.Count, MaxArmySize);
+        //UI PART
         //if(GameManagerScript.InCombat)
         //{
         //    CheckIfEnemyWonRound();
         //}
     }
-    //public virtual void CheckIfEnemyWonRound()
-    //{
-    //    if (ActivePlayerPawns.Count <= 0)
-    //    {
-    //        //enemy has won :(
-    //        GameManagerScript.EnemyWonRound();
-    //    }
-    //}
+    public virtual void AddActiveUnitToPlayerRoster(GameObject unit)
+    {
+        ActivePlayerUnits.Add(unit);
+        //UI PART NOT DONE
+    }
+
+    public virtual void RemoveActiveUnitFromEnemyRoster(GameObject unit)
+    {
+        ActiveEnemyUnits.Remove(unit);
+    }
+    public virtual void CheckIfEnemyWonRound()
+    {
+        if (ActivePlayerUnits.Count <= 0)
+        {
+            //enemy has won :(
+          //  GameManagerScript.EnemyWonRound();
+        }
+    }
 
 
     public virtual GameObject SearchForEnemyTarget(Vector3 myPosiotion)

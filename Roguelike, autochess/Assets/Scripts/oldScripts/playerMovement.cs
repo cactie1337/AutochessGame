@@ -6,8 +6,12 @@ using UnityEngine.AI;
 public class playerMovement : MonoBehaviour
 {
     NavMeshAgent agent;
+    Animator anim;
+    
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
@@ -19,6 +23,7 @@ public class playerMovement : MonoBehaviour
             if(Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 agent.SetDestination(hit.point);
+                
             }
         }
     }

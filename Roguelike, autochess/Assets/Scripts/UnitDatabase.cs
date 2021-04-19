@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitDatabase : MonoBehaviour
+public class UnitDatabase : Singleton<UnitDatabase>
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private List<UnitStats> units;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<UnitStats> Units { get => units; protected set => units = value; }
 }
