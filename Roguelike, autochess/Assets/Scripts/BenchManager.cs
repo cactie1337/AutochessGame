@@ -84,14 +84,79 @@ public class BenchManager : Singleton<BenchManager>
             {
                 BenchSlotScripts[i].CreatePlayerUnit(unitStats, goldCost);
 
-                //SynergyManagerScript.UnitAcquired(unitStats);
+                SynergyManagerScript.UnitAcquired(unitStats);
 
-                //CheckForCombination(unitStats);
+                CheckForCombination(unitStats);
 
                 return true;
             }
         }
         return false;
+    }
+    public virtual bool SendActiveUnitToBench(GameObject unit)
+    {
+        for (int i = 0; i < BenchSlotScripts.Count; i++)
+        {
+            if (!BenchSlotScripts[i].HasActiveUnit())
+            {
+                BenchSlotScripts[i].ChangeUnitOutOfCombat(unit);
+                UnitStats stats = unit.GetComponent<Unit>().Stats;
+                SynergyManagerScript.UnitOutOfPlay(stats);
+                CheckForCombination(stats);
+                return true;
+            }
+        }
+        return false;
+    }
+    public virtual void CheckForCombination(UnitStats unitStats)
+    {
+        UnitStats upgradeUnit = unitStats.upgradedUnit;
+        if(upgradeUnit == null)
+        {
+            return;
+        }
+        List<GameObject> similiarUnits = new List<GameObject>();
+        bool combine = false;
+
+        for (int i = 0; i < BenchSlotScripts.Count; i++)
+        {
+            if (BenchSlotScripts[i].HasActiveUnit())
+            {
+                if (BenchSlotScripts[i].ActiveUnit.GetComponent<Unit>().Stats == unitStats)
+                {
+                    similiarUnits.Add(BenchSlotScripts[i].ActiveUnit);
+                }
+            }
+
+            if (similiarUnits.Count == UnitsNeededForCombo)
+            {
+                combine = true;
+                break;
+            }
+        }
+
+        if (combine)
+        {
+            int totalGoldCost = 0;
+
+            foreach (GameObject unit in similiarUnits)
+            {
+                ArmyManagerScript.RemoveUnitFromTotalPlayerRoster(unit);
+                Status status = unit.GetComponent<Status>();
+                totalGoldCost += status.GoldWorth;
+                status.SelfDestruct();
+            }
+            SynergyManagerScript.AdjustmentFromUpgrade(unitStats);
+
+            if(AddNewUnitToBench(upgradeUnit, totalGoldCost))
+            {
+
+            }
+            else
+            {
+                Debug.LogError("Not enough space in bench");
+            }
+        }
     }
 
 

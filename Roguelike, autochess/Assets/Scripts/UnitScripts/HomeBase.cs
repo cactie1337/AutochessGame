@@ -24,6 +24,6 @@ public class HomeBase : MonoBehaviour
     //This will only be called at the end of combat
     public virtual void SendToHomeBase()
     {
-        TileScript.ChangePawnOutOfCombat(gameObject);
+        TileScript.ChangeUnitOutOfCombat(gameObject);
     }
 }

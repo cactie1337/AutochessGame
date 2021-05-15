@@ -2,17 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldManager : MonoBehaviour
+public class GoldManager : Singleton<GoldManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private int currentGold;
+    private UIManager uiManagerScript;
 
-    // Update is called once per frame
-    void Update()
+    public int CurrentGold { get => currentGold; protected set => currentGold = value; }
+    public UIManager UIManagerScript { get => uiManagerScript; protected set => uiManagerScript = value; }
+
+    public virtual void Awake()
     {
-        
+        UIManagerScript = UIManager.Instance;
+        CurrentGold = 0;
+    }
+    public virtual bool SpendGold(int amount)
+    {
+        if(amount <= CurrentGold)
+        {
+            CurrentGold -= amount;
+            //UIManagerScript.UpdateCurrentGoldText(CurrentGold);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public virtual void GainGold(int amount)
+    {
+        CurrentGold += amount;
+        //UIManagerScript.UpdateCurrentGoldText(CurrentGold);
     }
 }

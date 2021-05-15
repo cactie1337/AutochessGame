@@ -46,9 +46,15 @@ public class BoardTile : MonoBehaviour
     protected UnitDragManager UnitDragScript { get => unitDragScript; set => unitDragScript = value; }
     protected GameManager GameManager { get => gameManagerScript; set => gameManagerScript = value; }
     protected ArmyManager ArmyManagerScript { get => armyManagerScript; set => armyManagerScript = value; }
-    protected UIManager UIManager { get => uiManagerScript; set => uiManagerScript = value; }
+    protected UIManager UIManagerScript { get => uiManagerScript; set => uiManagerScript = value; }
 
-
+    protected virtual void Awake()
+    {
+        UnitDragScript = UnitDragManager.Instance;
+        ArmyManagerScript = ArmyManager.Instance;
+        GameManager = GameManager.Instance;
+        UIManagerScript = UIManager.Instance; 
+    }
 
 
     public virtual void Setup(int id, Vector2 gridPosition, TileCategory tileType)
@@ -94,20 +100,21 @@ public class BoardTile : MonoBehaviour
         ActiveUnit = Instantiate(unitStats.unit);
 
         Status status = ActiveUnit.GetComponent<Status>();
-        //status.IsPlayer = true;
-        //status.GoldWorth = goldCost;
+        status.IsPlayer = true;
+        status.GoldWorth = goldCost;
         ArmyManagerScript.AddUnitToTotalPlayerRoster(ActiveUnit);
+        ChangeUnitOutOfCombat(ActiveUnit);
     
     }
-    public virtual void ChangePawnOutOfCombat(GameObject newUnit)
+    public virtual void ChangeUnitOutOfCombat(GameObject newUnit)
     {
         if (newUnit == null)
         {
             ClearActiveUnit();
             return;
         }
-        //newUnit.GetComponent<HomeBase>().SetHomeBase(this);
-        //newUnit.GetComponent<Movement>().SetCurrentTileOutOfCombat(this);
+        newUnit.GetComponent<HomeBase>().SetHomeBase(this);
+        newUnit.GetComponent<Movement>().SetCurrentTileOutOfCombat(this);
 
         ActiveUnit = newUnit;
         ActiveUnit.transform.position = transform.position;
@@ -123,7 +130,7 @@ public class BoardTile : MonoBehaviour
             return;
         }
 
-        //newUnit.GetComponent<Movement>().SetCurrentTileInCombat(this);
+        newUnit.GetComponent<Movement>().SetCurrentTileInCombat(this);
         ActiveUnit = newUnit;
     }
 
@@ -136,16 +143,16 @@ public class BoardTile : MonoBehaviour
     protected virtual void OnMouseEnter()
     {
         HoverHighLight.SetActive(true);
-        //UnitDragScript.SetHoveredTile(true);
+        UnitDragScript.SetHoveredTile(this);
     }
     protected virtual void OnMouseExit()
     {
         HoverHighLight.SetActive(false);
-        //UnitDragScript.SetHoveredTile(null); 
+        UnitDragScript.SetHoveredTile(null); 
     }
     protected virtual void OnMouseDown()
     {
-        //UnitDragScript.ClickUnit(ActiveUnit, this);
+        UnitDragScript.ClickUnit(ActiveUnit, this);
     }
 
 }

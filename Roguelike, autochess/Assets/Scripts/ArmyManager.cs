@@ -56,7 +56,7 @@ public class ArmyManager : Singleton<ArmyManager>
     {
        PlayerTotalRoster.Add(unit);
     }
-    public virtual void RemoveUnitFromPlayerRoster(GameObject unit)
+    public virtual void RemoveUnitFromTotalPlayerRoster(GameObject unit)
     {
         PlayerTotalRoster.Remove(unit);
     }
@@ -84,7 +84,7 @@ public class ArmyManager : Singleton<ArmyManager>
         if (ActivePlayerUnits.Count <= 0)
         {
             //enemy has won :(
-          //  GameManagerScript.EnemyWonRound();
+            //GameManagerScript.EnemyWonRound();
         }
     }
 

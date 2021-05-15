@@ -88,7 +88,7 @@ public class Movement : MonoBehaviour
             Anim.SetBool("moving", Moving);
         }
     }
-    protected virtual void SetCurrentTileOutOfCombat(BoardTile tile)
+    public virtual void SetCurrentTileOutOfCombat(BoardTile tile)
     {
         if (CurrentTile != null)
         {
@@ -108,7 +108,7 @@ public class Movement : MonoBehaviour
         //set desired position
         DesiredPosition = tile.transform.position;
     }
-    protected virtual void SetCurrentTileOutInCombat(BoardTile tile)
+    public virtual void SetCurrentTileInCombat(BoardTile tile)
     {
         if (CurrentTile != null)
         {   
