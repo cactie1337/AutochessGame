@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11840cf4e0fa4c9408ed0cf305a514b3, type: 3}
   m_Name: Infernal 1 - 1 star
   m_EditorClassIdentifier: 
-  name: Infernal1
+  name: SADS
   icon: {fileID: 21300000, guid: ea70de4177ea7974dbc39b9c018f8041, type: 3}
   unit: {fileID: 4490611297153463649, guid: 7b8ce02906af8204c9a740d719bf6a28, type: 3}
   starRating: 0

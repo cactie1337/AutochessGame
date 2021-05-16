@@ -1926,7 +1926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 59.9}
+  m_AnchoredPosition: {x: 0, y: 59.9}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1521633222
@@ -1977,6 +1977,7 @@ GameObject:
   - component: {fileID: 1542485434}
   - component: {fileID: 1542485436}
   - component: {fileID: 1542485435}
+  - component: {fileID: 1542485437}
   m_Layer: 5
   m_Name: Stats Panel
   m_TagString: Untagged
@@ -2057,6 +2058,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1542485437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542485433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e093abbc8a1ea2428ebaf4e0c9000c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 0}
+  unitName: {fileID: 1267009323}
+  oneStarParent: {fileID: 1079588351}
+  twoStarParent: {fileID: 1260025546}
+  threeStarParent: {fileID: 1475248865}
+  unitIcon: {fileID: 1101992148}
+  unitHealth: {fileID: 1882123166}
+  unitArmor: {fileID: 782033475}
+  unitDamage: {fileID: 287845172}
+  unitAttackSpeed: {fileID: 945669544}
+  unitDps: {fileID: 2094402745}
+  unitMoveSpeed: {fileID: 705548908}
 --- !u!1 &1623031046
 GameObject:
   m_ObjectHideFlags: 0
@@ -4126,6 +4151,7 @@ GameObject:
   - component: {fileID: 2540804881036815204}
   - component: {fileID: 2540804881036815206}
   - component: {fileID: 2540804881036815207}
+  - component: {fileID: 2540804881036815201}
   m_Layer: 5
   m_Name: Trash Panel
   m_TagString: Untagged
@@ -4190,6 +4216,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2540804881036815201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540804881036815205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c760f8c75c8cb04d80cbd54202af287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoveredColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2540804881149199568
 GameObject:
   m_ObjectHideFlags: 0
@@ -4540,7 +4579,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '4
+  m_Text: '5
 
 '
 --- !u!114 &2540804881222256773

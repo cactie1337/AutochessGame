@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 474425170329f4f4bb752be1da8d7cea
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - assassinSynergy: {fileID: 11400000, guid: 71f9593b13e4c5d47817ad8269a6b0e5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

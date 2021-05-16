@@ -1,0 +1,273 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8432203223137777633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8432203223137777635}
+  - component: {fileID: 8432203223137777567}
+  - component: {fileID: 8432203223137777560}
+  - component: {fileID: 8432203223137777561}
+  - component: {fileID: 8432203223137777562}
+  - component: {fileID: 8432203223137777565}
+  - component: {fileID: 8432203223137777634}
+  - component: {fileID: 8432203223137777564}
+  - component: {fileID: 8432203223137777563}
+  - component: {fileID: 8432203223137777566}
+  - component: {fileID: 8432203223137777556}
+  - component: {fileID: 8432203223137777557}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8432203223137777635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8432203223137777567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc20b716bbf0284a8c76303d225f363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCombat: 0
+  currentRound: 0
+  rerollCost: 0
+  startingGold: 0
+  roundIsEnding: 0
+  endRoundLeewayDuration: 0
+  playerArmyWon: 0
+  enemyArmyWon: 0
+--- !u!114 &8432203223137777560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e12f4fe85ea9d4abe356ff776c5597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitClickedOn: {fileID: 0}
+  unitBeingDragged: {fileID: 0}
+  unitTransform: {fileID: 0}
+  tileClickedOn: {fileID: 0}
+  tileDraggedFrom: {fileID: 0}
+  tileHoveredOver: {fileID: 0}
+  hoveredOnTrash: 0
+  lastMousePos: {x: 0, y: 0, z: 0}
+  isDraggingMouse: 0
+  firstTouchTaken: 0
+  zCameraOffset: 0
+--- !u!114 &8432203223137777561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8feb8f0a767d0648a3a3d32b8ce0a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 0
+  maxLevel: 0
+  currentExperience: 0
+  maxExperience: 0
+--- !u!114 &8432203223137777562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabe5b33b78ee16448180b5c0c082c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGold: 0
+--- !u!114 &8432203223137777565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343ae9cc2aa2fd546b5541c6ec0458b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxArmySize: 0
+  activePlayerUnits: []
+  playerRoundStartRoster: []
+  playerTotalRoster: []
+  activeEnemyUnits: []
+  enemyRoundStartRoster: []
+--- !u!114 &8432203223137777634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f34bbb509a73f54186aac27a0da5682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boardTransform: {fileID: 0}
+  playerBoardTilePrefab: {fileID: 7645249022711201267, guid: fb49e8adb34763941848a4c6ed5449e4,
+    type: 3}
+  enemyBoardTilePrefab: {fileID: 5745031526819838908, guid: fe98f286b6fd2b849bc6f63b567ab18a,
+    type: 3}
+  boardTiles: []
+--- !u!114 &8432203223137777564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 249c2264a86e5454882a9ee9ee95ad7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  benchSlotCount: 8
+  benchStartLocation: {fileID: 0}
+  benchSlotScripts: []
+  unitsNeededForCombo: 0
+  benchTilePrefab: {fileID: 2682278572457675709, guid: 7983c8a8a01489841a1a3af19aade3c7,
+    type: 3}
+--- !u!114 &8432203223137777563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4698bc975311d419a2eb0ad0c4a34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopSlotPrefab: {fileID: 0}
+  shopSlotGrid: {fileID: 0}
+  shopMenu:
+    isActive: 0
+    menuTransform: {fileID: 0}
+    activePosition: {fileID: 0}
+    hiddenPosition: {fileID: 0}
+  shopSlotCount: 0
+  shopSlots: []
+  currentLevelText: {fileID: 0}
+  currentExpText: {fileID: 0}
+  currentGoldText: {fileID: 0}
+  trashPanel:
+    isActive: 0
+    menuTransform: {fileID: 0}
+    activePosition: {fileID: 0}
+    hiddenPosition: {fileID: 0}
+  statsPanel:
+    isActive: 0
+    menuTransform: {fileID: 0}
+    activePosition: {fileID: 0}
+    hiddenPosition: {fileID: 0}
+  tooltipPanelDesktop:
+    isActive: 0
+    menuTransform: {fileID: 0}
+    activePosition: {fileID: 0}
+    hiddenPosition: {fileID: 0}
+  tooltipName: {fileID: 0}
+  tooltipText: {fileID: 0}
+  synergyPanel:
+    isActive: 0
+    menuTransform: {fileID: 0}
+    activePosition: {fileID: 0}
+    hiddenPosition: {fileID: 0}
+  synergyWidgetPrefab: {fileID: 0}
+  synergyBubblePrefab: {fileID: 0}
+  armyCountDisplay:
+    isActive: 0
+    menuTransform: {fileID: 0}
+    activePosition: {fileID: 0}
+    hiddenPosition: {fileID: 0}
+  armyCountText: {fileID: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
+  overArmySizeColor: {r: 0, g: 0, b: 0, a: 0}
+  underArmySizeColor: {r: 0, g: 0, b: 0, a: 0}
+  winnerMessagePanel:
+    isActive: 0
+    menuTransform: {fileID: 0}
+    activePosition: {fileID: 0}
+    hiddenPosition: {fileID: 0}
+  winnerMessageText: {fileID: 0}
+  currentRoundText: {fileID: 0}
+  unitHealthBarCanvas: {fileID: 0}
+--- !u!114 &8432203223137777566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5631810b5b34e49aebc4504706c07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rosters:
+  - {fileID: 11400000, guid: 3d7bdedb4ea1902428aa5c4b985927e7, type: 2}
+--- !u!114 &8432203223137777556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c017f4cbab96b44da2aba784ef0e00f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  synergies: []
+--- !u!114 &8432203223137777557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432203223137777633}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474425170329f4f4bb752be1da8d7cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
