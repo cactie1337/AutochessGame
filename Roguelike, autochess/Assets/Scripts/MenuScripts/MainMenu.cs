@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public sc SceneChanger;
     public void quitButton()
     {
         Application.Quit();
     }
     public void playButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneChanger = FindObjectOfType(typeof(sc)) as sc;
+        SceneChanger.ToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
