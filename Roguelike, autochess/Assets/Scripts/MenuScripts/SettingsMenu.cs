@@ -5,8 +5,9 @@ using UnityEngine.Audio;
 
 public class SettingsMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject main;
     public AudioMixer audioMixer;
+    public AudioSource fxSource;
     public void SetSFXVolume(float volume)
     {
         audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
@@ -14,5 +15,15 @@ public class SettingsMenu : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         audioMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyUp("escape"))
+        {
+            gameObject.SetActive(false);
+            fxSource.Play(0);
+            main.SetActive(true);
+        }
+
     }
 }

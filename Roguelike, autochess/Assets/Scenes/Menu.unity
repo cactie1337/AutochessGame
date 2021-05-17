@@ -1193,7 +1193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e4b9ee46315674f95354d5eeca7548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 1004740829}
   audioMixer: {fileID: 24100000, guid: 7454c3ea8c3097c4395ffca63714064f, type: 2}
+  fxSource: {fileID: 1812546762}
 --- !u!4 &292592859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ab2bdf31cda43f4397f307c80a7b6a2,
