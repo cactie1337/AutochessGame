@@ -29,7 +29,15 @@ public class ExperienceManager : Singleton<ExperienceManager>
     protected virtual void Awake()
     {
         ArmyManagerScript = ArmyManager.Instance;
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager singleton instance found in the scene. Please add an ArmyManager script to the GameManager gamobject before entering playmode.");
+        }
         UserInterface = UIManager.Instance;
+        if (!UserInterface)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. Please add an UserInterfaceManager script to the GameManager gamobject before entering playmode.");
+        }
 
         if (MaxLevel == 0)
             MaxLevel = 10;

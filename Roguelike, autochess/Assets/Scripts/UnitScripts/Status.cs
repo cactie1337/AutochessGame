@@ -36,10 +36,30 @@ public class Status : MonoBehaviour
     public virtual void Awake()
     {
         ArmyManagerScript = ArmyManager.Instance;
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager singleton instance found in scene. Please add one before entering playmode!");
+        }
         TargetingScript = GetComponent<Targeting>();
+        if (!TargetingScript)
+        {
+            Debug.LogError("No Targetings script on pawn prefab: " + gameObject.name + ". Please add a Targeting script to this pawns prefab before entering playmode.");
+        }
         MovementScript = GetComponent<Movement>();
+        if (!MovementScript)
+        {
+            Debug.LogError(gameObject.name + " has no MOvement script. please add one to its prefab before entering playmode.");
+        }
         HomeBaseScript = GetComponent<HomeBase>();
+        if (!HomeBaseScript)
+        {
+            Debug.LogError(gameObject.name + " has no HomeBase script. please add one to its prefab before entering playmode.");
+        }
         HealthAndManaScript = GetComponent<HealthAndMana>();
+        if (!HomeBaseScript)
+        {
+            Debug.LogError(gameObject.name + " has no HealthAndMana script. please add one to its prefab before entering playmode.");
+        }
 
         IsDead = false;
         IsPlayer = false;

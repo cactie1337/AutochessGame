@@ -36,10 +36,30 @@ public class Targeting : MonoBehaviour
     protected virtual void Awake()
     {
         StatusScript = GetComponent<Status>();
+        if (!StatusScript)
+        {
+            Debug.LogError(gameObject.name + " pawn does not have a status script attached");
+        }
         MovementScript = GetComponent<Movement>();
+        if (!MovementScript)
+        {
+            Debug.LogError(gameObject.name + " has no Movement script. Please attached a Movement script to their prefab.");
+        }
         UnitScript = GetComponent<Unit>();
+        if (!UnitScript)
+        {
+            Debug.LogError(gameObject.name + " has no Pawn script. Please attached a Pawn script to their prefab.");
+        }
         AutoAttackScript = GetComponent<AutoAttack>();
+        if (!AutoAttackScript)
+        {
+            Debug.LogError(gameObject.name + " has no AutoAttack script. Please attached a AutoAttack script to their prefab.");
+        }
         ArmyManagerScript = ArmyManager.Instance;
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager script found, please add one to the game manager gameobject.");
+        }
     }
     public virtual void SearchForNewTarget()
     {

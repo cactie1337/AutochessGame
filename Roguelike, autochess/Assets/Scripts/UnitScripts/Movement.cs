@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private bool usingAnimations = false;
     [SerializeField]
-    private string movementBoolString = "moving";
+    private string movementBoolString = "Moving";
 
     [Header("Positioning")]
     [SerializeField]
@@ -47,10 +47,17 @@ public class Movement : MonoBehaviour
     protected virtual void Awake()
     {
         BoardManagerScript = BoardManager.Instance;
+        if (!BoardManagerScript)
+        {
+            Debug.LogError("No ChessBoardManager singleton instance found in the scene. Please add a ChessBoardManager script to the GameManager gameobject before" +
+                "entering playmode!");
+        }
 
+        //cache references for later use
         TargetingScript = GetComponent<Targeting>();
         UnitScript = GetComponent<Unit>();
 
+        //Only set reference to animator if we are using animations
         if (usingAnimations)
         {
             Anim = GetComponent<Animator>();
@@ -85,7 +92,7 @@ public class Movement : MonoBehaviour
         }
         if (usingAnimations)
         {
-            Anim.SetBool("moving", Moving);
+            Anim.SetBool("Moving", Moving);
         }
     }
     public virtual void SetCurrentTileOutOfCombat(BoardTile tile)
@@ -112,7 +119,7 @@ public class Movement : MonoBehaviour
     {
         if (CurrentTile != null)
         {   
-                CurrentTile.ClearActiveUnit();   
+           CurrentTile.ClearActiveUnit();   
         }
 
         PreviousTile3 = PreviousTile2;

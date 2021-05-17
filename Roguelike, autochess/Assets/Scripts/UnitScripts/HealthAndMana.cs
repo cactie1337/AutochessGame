@@ -28,7 +28,7 @@ public class HealthAndMana : MonoBehaviour
     private Unit unitScript;
     private Camera mainCamera;
     private PrefabDatabase prefabDatabaseScript;
-    private UIManager UIManagerScript;
+    private UIManager uiManagerScript;
     private Status statusScript;
     private AutoAttack attackScript;
     private Movement movementScript;
@@ -54,7 +54,7 @@ public class HealthAndMana : MonoBehaviour
     protected Unit UnitScript { get => unitScript; set => unitScript = value; }
     protected Camera MainCamera { get => mainCamera; set => mainCamera = value; }
     protected PrefabDatabase PrefabDatabaseScript { get => prefabDatabaseScript; set => prefabDatabaseScript = value; }
-    protected UIManager UIManager { get => UIManager; set => UIManager = value; }
+    protected UIManager UIManagerScript { get => uiManagerScript; set => uiManagerScript = value; }
     protected Status StatusScript { get => statusScript; set => statusScript = value; }
     protected AutoAttack AttackScript { get => attackScript; set => attackScript = value; }
     protected Movement MovementScript { get => movementScript; set => movementScript = value; }
@@ -63,13 +63,55 @@ public class HealthAndMana : MonoBehaviour
     protected virtual void Awake()
     {
         UnitScript = GetComponent<Unit>();
+        if (!UnitScript)
+        {
+            Debug.LogError(gameObject.name + " does not have a Pawn script. Please add one to its prefab before entering playmode!");
+        }
+
         PrefabDatabaseScript = PrefabDatabase.Instance;
+        if (!PrefabDatabaseScript)
+        {
+            Debug.LogError("No PrefabDatabase singleton instance found in the scene. Please add a PrefabDatabase script to the Databases gameobject " +
+                "before entering playmode!");
+        }
+
         UIManagerScript = UIManager.Instance;
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. Please add a UserInterfaceManager script to the Game Manager gameobject " +
+                "before entering playmode!");
+        }
+
         ArmyManagerScript = ArmyManager.Instance;
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager singleton instance found in the scene. PLease add a ArmyManager script to the Game Manager gameobject" +
+                "before entering playmode.");
+        }
+
         MainCamera = Camera.main;
+        if (!MainCamera)
+        {
+            Debug.LogError("Please put a main camera in the scene before entering playmode!");
+        }
+
         StatusScript = GetComponent<Status>();
+        if (!StatusScript)
+        {
+            Debug.LogError(gameObject.name + " has no Status script. Please attach one to their prefab before continuing playmode.");
+        }
+
         AttackScript = GetComponent<AutoAttack>();
+        if (!StatusScript)
+        {
+            Debug.LogError(gameObject.name + " has no AutoAttack script. Please attach one to their prefab before continuing playmode.");
+        }
+
         MovementScript = GetComponent<Movement>();
+        if (!StatusScript)
+        {
+            Debug.LogError(gameObject.name + " has no Movement script. Please attach one to their prefab before continuing playmode.");
+        }
     }
     protected virtual void Start()
     {
@@ -199,6 +241,10 @@ public class HealthAndMana : MonoBehaviour
         else if (UnitScript.Stats.starRating == UnitStats.StarRating.Three)
         {
             healthBarPrefab = PrefabDatabaseScript.threeStarHealthBar;
+        }
+        else
+        {
+            Debug.LogError("No compatible star rating set in the UnitStats object for " + gameObject.name);
         }
         
 

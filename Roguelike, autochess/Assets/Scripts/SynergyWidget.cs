@@ -47,7 +47,10 @@ public class SynergyWidget : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     protected virtual void Awake()
     {
         UIManagerScript = UIManager.Instance;
-        
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. PLease add one before entering playmode!");
+        }
 
         //this must be zero at runtime
         CurrentOutlineIteration = 0;
@@ -61,8 +64,16 @@ public class SynergyWidget : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             GameObject bubble = Instantiate(UIManagerScript.SynergyBubblePrefab, GridParent);
             Image outline = bubble.transform.GetChild(0).GetComponent<Image>();
+            if (!outline)
+            {
+                Debug.LogError("No image found on child 0 of the Synergy Bubble prefab. Please add one or re-arrange your children so the first one has an image for the outline.");
+            }
             RectTransform outlineCenter = bubble.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
             Image center = bubble.transform.GetChild(1).GetComponent<Image>();
+            if (!center)
+            {
+                Debug.LogError("No image found on child 1 of the Synergy Bubble prefab. Please add one or re-arrange your children so the second one has an image for the center.");
+            }
 
             outline.rectTransform.sizeDelta = new Vector2(sizes[0], sizes[0]);
             outlineCenter.sizeDelta = new Vector2(sizes[1], sizes[1]);

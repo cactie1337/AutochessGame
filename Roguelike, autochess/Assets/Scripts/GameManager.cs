@@ -72,6 +72,51 @@ public class GameManager : Singleton<GameManager>
         UnitDragScript = UnitDragManager.Instance;
         GoldManagerScript = GoldManager.Instance;
         ExpManager = ExperienceManager.Instance;
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. Please add a UserInterfaceManager script to the Game Manager gameobject before" +
+                "entering playmode!");
+        }
+
+        if (!SynergyManagerScript)
+        {
+            Debug.LogError("No SynergyManager singleton instance found in the scene. Please add a SynergyManager script to the Game Manager gameobject before" +
+                "entering playmode!");
+        }
+
+        if (!UnitDatabaseScript)
+        {
+            Debug.LogError("No PawnDatabase singleton instance found in the scene. Please add a PawnDatabase script to the Database gameobject before" +
+                  "entering playmode!");
+        }
+
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager singleton instance found in the scene. Please add a ArmyManager script to the Game Manager gameobject before" +
+                  "entering playmode!");
+        }
+
+        if (!EnemyRosterManagerScript)
+        {
+            Debug.LogError("No EnemyRosterManager singleton instance found in the scene. Please add a EnemyRosterManager script to the Game Manager gameobject before" +
+                  "entering playmode!");
+        }
+
+        if (!UnitDragScript)
+        {
+            Debug.LogError("No PawnDragManager singleton instance found in the scene. Pleas add a PawnDragManager script to the Game Manager gameobject before" +
+                "entering playmode.");
+        }
+
+        if (!GoldManagerScript)
+        {
+            Debug.LogError("No GoldManager singletone instance found! Please add a GoldManager script to the scene.");
+        }
+
+        if (!ExpManager)
+        {
+            Debug.LogError("No ExperienceManager singletone instance found! Please add a ExperienceManager script to the scene.");
+        }
 
         //if we didnt set a leeyway duration in the inspector, set it to 1
         if (EndRoundLeewayDuration == 0)
@@ -88,7 +133,7 @@ public class GameManager : Singleton<GameManager>
         //make sure we dont accidently start the player with no money
         if (StartingGold == 0)
         {
-            StartingGold = 1;
+            StartingGold = 5;
         }
 
         //Setup Scene
@@ -132,6 +177,12 @@ public class GameManager : Singleton<GameManager>
             UnitDragScript.SendUnitBack();
         }
 
+        if (EnemyRosterManagerScript.TotalRosterCount() < 1)
+        {
+            Debug.LogError("No rosters set up. Exiting start of combat. Set some rosters in the EnemyRosterManager before starting combat.");
+            return;
+        }
+
         if (CurrentRound - 1 >= EnemyRosterManagerScript.TotalRosterCount())
         {
             ArmyManagerScript.CreateEnemyArmy(EnemyRosterManagerScript.Rosters[EnemyRosterManagerScript.TotalRosterCount() - 1]);
@@ -143,8 +194,8 @@ public class GameManager : Singleton<GameManager>
 
         ArmyManagerScript.CheckIfPlayerIsOverMaxArmySize();
         ArmyManagerScript.SetPlayerRoster();
-        //SynergyManagerScript.ApplySynergyEffects(ArmyManagerScript.ActivePlayerUnits, ArmyManagerScript.ActiveEnemyUnits);
-        //SynergyManagerScript.ApplySynergyEffects(ArmyManagerScript.ActiveEnemyUnits, ArmyManagerScript.ActivePlayerUnits);
+        SynergyManagerScript.ApplySynergyEffects(ArmyManagerScript.ActivePlayerUnits, ArmyManagerScript.ActiveEnemyUnits);
+        SynergyManagerScript.ApplySynergyEffects(ArmyManagerScript.ActiveEnemyUnits, ArmyManagerScript.ActivePlayerUnits);
         foreach (GameObject unit in ArmyManagerScript.ActivePlayerUnits)
         {
             unit.GetComponent<HealthAndMana>().StartOfCombatHealthRefresh();
@@ -181,7 +232,6 @@ public class GameManager : Singleton<GameManager>
         {
             RoundIsEnding = true;
             EndRound();
-            SceneManager.LoadScene(0);
         }
     }
     protected virtual void EndRound()
@@ -204,10 +254,15 @@ public class GameManager : Singleton<GameManager>
         else if (PlayerArmyWon)
         {
             UIManagerScript.UpdateWinnerMessageText("Player won!");
+            GoldManagerScript.GainGold(1);
         }
         else if (EnemyArmyWon)
         {
             UIManagerScript.UpdateWinnerMessageText("Enemy won!");
+        }
+        else
+        {
+
         }
         UIManagerScript.WinnerMessagePanel.Open();
         RoundIsEnding = false;
@@ -216,7 +271,7 @@ public class GameManager : Singleton<GameManager>
     }
     protected virtual IEnumerator ResetBoardAndGiveRewards()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1);
         ResetBoard();
         UIManagerScript.WinnerMessagePanel.Close();
         IncreaseRoundCounter();

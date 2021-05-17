@@ -18,6 +18,10 @@ public class TrashManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         myImage = GetComponent<Image>();
         UnitDragScript = UnitDragManager.Instance;
+        if (!UnitDragScript)
+        {
+            Debug.LogError("No PawnDragManager singleton instance found in the scene. PLease add a PawnDragManager script to the Game Manager gameobject before entering playmode.");
+        }
         normalColor = Color.white;
     }
     public virtual void OnPointerEnter(PointerEventData data)

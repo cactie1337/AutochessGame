@@ -156,9 +156,6 @@ public class AutoAttack : MonoBehaviour
         HealthAndManaScript.GainMana(UnitScript.ManaPerAttack);
     }
 
-
-
-
     protected virtual float CalculateDamage()
     {
         float damage = Random.Range(UnitScript.MinAttackDmg, UnitScript.MaxAttackDmg + 1);  

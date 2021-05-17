@@ -45,6 +45,10 @@ public class StatsPanel : Singleton<StatsPanel>
     protected virtual void Awake()
     {
         UnitDragScript = UnitDragManager.Instance;
+        if (!UnitDragScript)
+        {
+            Debug.LogError("No 'PawnDragManager' singleton instance found in the scene. Please add one before entering playmode.");
+        }
     }
     IEnumerator StatTick()
     {

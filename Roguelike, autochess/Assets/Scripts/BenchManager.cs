@@ -37,6 +37,29 @@ public class BenchManager : Singleton<BenchManager>
         ArmyManagerScript = ArmyManager.Instance;
         SynergyManagerScript = SynergyManager.Instance;
 
+        if (!BenchTilePrefab)
+        {
+            Debug.LogError("No BenchTilePrefab set in the inspector in the BenchManager script located on the " + gameObject.name + " gameobject. Please add" +
+                "a BenchTilePrefab before entering playmode.");
+            return;
+        }
+        if (!BenchStartLocation)
+        {
+            Debug.LogError("No BenchStartLocation set in the inspector in the BenchManager script located on the " + gameObject.name + " gameobject. Please add" +
+                "a BenchStartLocation before entering playmode.");
+            return;
+        }
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager singleton instance found in the scene. Please add an ArmyManager script to the Game Manager gameobject" +
+                "before entering playmode");
+        }
+        if (!SynergyManagerScript)
+        {
+            Debug.LogError("No SynergyManager singleton instance found in the scene. Please add an ArmyManager script to the Game Manager gameobject" +
+                "before entering playmode");
+        }
+
         if (BenchSlotCount == 0)
             BenchSlotCount = 8;
 
@@ -84,7 +107,7 @@ public class BenchManager : Singleton<BenchManager>
             {
                 BenchSlotScripts[i].CreatePlayerUnit(unitStats, goldCost);
 
-                //SynergyManagerScript.UnitAcquired(unitStats);
+                SynergyManagerScript.UnitAcquired(unitStats);
 
                 CheckForCombination(unitStats);
 
@@ -101,7 +124,7 @@ public class BenchManager : Singleton<BenchManager>
             {
                 BenchSlotScripts[i].ChangeUnitOutOfCombat(unit);
                 UnitStats stats = unit.GetComponent<Unit>().Stats;
-                //SynergyManagerScript.UnitOutOfPlay(stats);
+                SynergyManagerScript.UnitOutOfPlay(stats);
                 CheckForCombination(stats);
                 return true;
             }
@@ -146,7 +169,7 @@ public class BenchManager : Singleton<BenchManager>
                 totalGoldCost += status.GoldWorth;
                 status.SelfDestruct();
             }
-            //SynergyManagerScript.AdjustmentFromUpgrade(unitStats);
+            SynergyManagerScript.AdjustmentFromUpgrade(unitStats);
 
             if(AddNewUnitToBench(upgradeUnit, totalGoldCost))
             {

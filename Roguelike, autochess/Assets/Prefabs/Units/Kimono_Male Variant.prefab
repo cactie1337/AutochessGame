@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0212cd0e739c3e2488624650878c3b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 0193770f4ec9a5a49a86c3548b76da67, type: 2}
   minAttackDamage: 0
   maxAttackDamage: 0
   dps: 0

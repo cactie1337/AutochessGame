@@ -14,6 +14,10 @@ public class HomeBase : MonoBehaviour
     protected virtual void Awake()
     {
         MovementScript = GetComponent<Movement>();
+        if (!MovementScript)
+        {
+            Debug.LogError("No movement script found on " + gameObject.name + " pawn. Please add one to this specific pawns prefab");
+        }
     }
 
     public virtual void SetHomeBase(BoardTile tileScript)

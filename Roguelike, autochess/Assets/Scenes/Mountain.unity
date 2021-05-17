@@ -11895,6 +11895,11 @@ PrefabInstance:
       propertyPath: hoveredColor.r
       value: 0.764151
       objectReference: {fileID: 0}
+    - target: {fileID: 2540804881222256772, guid: 6e0427711440270419a0149d0bda8da5,
+        type: 3}
+      propertyPath: m_Text
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2540804881341023377, guid: 6e0427711440270419a0149d0bda8da5,
         type: 3}
       propertyPath: m_Name
@@ -12011,6 +12016,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0a38e1c0a4ca5164e8535512a7a6d676,
         type: 3}
+    - target: {fileID: 2540804881556841107, guid: 6e0427711440270419a0149d0bda8da5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1757507395}
+    - target: {fileID: 2540804881556841107, guid: 6e0427711440270419a0149d0bda8da5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RerollShopSlots
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0427711440270419a0149d0bda8da5, type: 3}
 --- !u!4 &992598746 stripped
@@ -26425,13 +26440,19 @@ PrefabInstance:
     - target: {fileID: 7918118806654571515, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
       propertyPath: synergies.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7918118806654571515, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
       propertyPath: synergies.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: f217893472e65b84e84445ec55672ac4,
+        type: 2}
+    - target: {fileID: 7918118806654571515, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
+        type: 3}
+      propertyPath: synergies.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 71f9593b13e4c5d47817ad8269a6b0e5,
         type: 2}
     - target: {fileID: 7918118806654571519, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
@@ -26447,6 +26468,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8432203223137777556, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: synergies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432203223137777556, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: synergies.Array.data[0].synergy
+      value: 
+      objectReference: {fileID: 11400000, guid: f217893472e65b84e84445ec55672ac4,
+        type: 2}
+    - target: {fileID: 8432203223137777556, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: synergies.Array.data[1].synergy
+      value: 
+      objectReference: {fileID: 11400000, guid: 71f9593b13e4c5d47817ad8269a6b0e5,
+        type: 2}
+    - target: {fileID: 8432203223137777557, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: assassinSynergy
+      value: 
+      objectReference: {fileID: 11400000, guid: 71f9593b13e4c5d47817ad8269a6b0e5,
+        type: 2}
+    - target: {fileID: 8432203223137777557, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: infernalSynergy
+      value: 
+      objectReference: {fileID: 11400000, guid: f217893472e65b84e84445ec55672ac4,
+        type: 2}
     - target: {fileID: 8432203223137777563, guid: 19fa2648af530df42827288e219e1287,
         type: 3}
       propertyPath: tooltipName
@@ -26685,6 +26735,17 @@ PrefabInstance:
       propertyPath: benchStartLocation
       value: 
       objectReference: {fileID: 1932904147}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
     - target: {fileID: 8432203223137777633, guid: 19fa2648af530df42827288e219e1287,
         type: 3}
       propertyPath: m_Name

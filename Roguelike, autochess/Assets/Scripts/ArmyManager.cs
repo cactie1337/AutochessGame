@@ -43,6 +43,29 @@ public class ArmyManager : Singleton<ArmyManager>
         GameManagerScript = GameManager.Instance;
         BenchManagerScript = BenchManager.Instance;
         UIManagerScript = UIManager.Instance;
+        if (!BoardManagerScript)
+        {
+            Debug.LogError("No ChessBoardManager singleton instance found in the scene. Please add a ChessBoardManager script to the Game Mananger gameobject before" +
+                "entering playmode!");
+        }
+        if (!GameManagerScript)
+        {
+            Debug.LogError("No GameManager singleton instance found in the scene.Please add a GameManager script to the Game Mananger gameobject before" +
+                "entering playmode!");
+        }
+        if (!BenchManagerScript)
+        {
+            Debug.LogError("No BenchManager singleton instance found in the scene.Please add a BenchManager script to the Game Mananger gameobject before" +
+                "entering playmode!");
+        }
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene.Please add a UserInterfaceManager script to the Game Mananger gameobject before" +
+                "entering playmode!");
+        }
+
+
+
         MaxArmySize = 0;
     }
     public virtual void IncreaseMaxArmySize(int amount)

@@ -65,14 +65,47 @@ public class UnitDragManager : Singleton<UnitDragManager>
     {
         MyCamera = Camera.main;
         ArmyManagerScript = ArmyManager.Instance;
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager singleton instance found in the scene. Please add an ArmyManager component to the Game Manager gameobject before entering playmode!");
+        }
         SynergyManagerScript = SynergyManager.Instance;
+        if (!SynergyManagerScript)
+        {
+            Debug.LogError("No SynergyManager singleton instance found in the scene. Please add an ArmyManager component to the Game Manager gameobject before entering playmode!");
+        }
         GameManagerScript = GameManager.Instance;
+        if (!GameManagerScript)
+        {
+            Debug.LogError("No GameManager singleton instance found in the scene. Please add an GameManager script to the game manager gameobject " +
+                "before entering playmode!");
+        }
         GoldManagerScript = GoldManager.Instance;
+        if (!GoldManagerScript)
+        {
+            Debug.LogError("No GoldManager singleton instance found in the scene. Please add a GoldManager script to the game manager gameobject " +
+                "before entering playmode!");
+        }
         UIManagerScript = UIManager.Instance;
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. Please add a UserInterfaceManager script to the game manager gameobject " +
+                "before entering playmode!");
+        }
         BenchManagerScript = BenchManager.Instance;
+        if (!BenchManagerScript)
+        {
+            Debug.LogError("No BenchManager singleton instance found in the scene. Please add a BenchManager script to the game manager gameobject " +
+                "before entering playmode!");
+        }
         StatsPanelScript = StatsPanel.Instance;
-        
-        if(ZCameraOffset == 0)
+        if (!StatsPanelScript)
+        {
+            Debug.LogError("No StatsPanel singleton instance found in the scene. Please add a BenchManager script to the game manager gameobject " +
+                "before entering playmode!");
+        }
+
+        if (ZCameraOffset == 0)
         {
             ZCameraOffset = 25f;
         }

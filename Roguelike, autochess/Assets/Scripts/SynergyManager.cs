@@ -53,7 +53,7 @@ public class SynergyObject
         }
         uniqueTotalUnits = totalUnits.Count;
     }
-    public void PawnLost(string unitName)
+    public void UnitLost(string unitName)
     {
         bool removalRequired = false;
 
@@ -163,7 +163,7 @@ public class SynergyObject
         if (isInPlay)
             OutOfPlay(unitName);
 
-        PawnLost(unitName);
+        UnitLost(unitName);
     }
     public void AdjustmentFromUpgrade(string unitName)
     {
@@ -171,7 +171,6 @@ public class SynergyObject
         if (!benchManagerScript)
         {
             benchManagerScript = BenchManager.Instance;
-            
         }
 
         //search our list to find our unique pawn entry for this particular pawn
@@ -309,9 +308,21 @@ public class SynergyManager : Singleton<SynergyManager>
     protected virtual void Awake()
     {
         SynergyDatabaseScript = SynergyDatabase.Instance;
+        if (!SynergyDatabaseScript)
+        {
+            Debug.LogError("No SynergyDatabase singleton instance found in the scene. Please add one before entering playmode!");
+        }
         BuffScript = SynergyBuffsAndDebuffs.Instance;
+        if (!BuffScript)
+        {
+            Debug.LogError("No SynergyBuffsAndDebuffs singleton instance found in the scene. Please add one before entering playmode!");
+        }
         UIManagerScript = UIManager.Instance;
-        //InitializeSynergies();
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. Please add one before entering playmode!");
+        }
+        InitializeSynergies();
     }
     protected virtual void InitializeSynergies()
     {
@@ -334,159 +345,159 @@ public class SynergyManager : Singleton<SynergyManager>
             }
         }
     }
-    //public virtual void UnitAcquired(UnitStats unit)
-    //{
-    //    //List<string> unitSynergies = SynergyStringsToList(unit);
+    public virtual void UnitAcquired(UnitStats unit)
+    {
+        List<string> unitSynergies = SynergyStringsToList(unit);
 
-    //    List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
+        List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
 
-    //    foreach (int iteration in affectedSynergies)
-    //    {
-    //        synergies[iteration].UnitAcquired(unit.name);
-    //    }
-    //}
-    //public virtual void UnitLost(UnitStats unit)
-    //{
-    //    List<string> unitSynergies = SynergyStringsToList(unit);
+        foreach (int iteration in affectedSynergies)
+        {
+            synergies[iteration].UnitAcquired(unit.name);
+        }
+    }
+    public virtual void UnitLost(UnitStats unit)
+    {
+        List<string> unitSynergies = SynergyStringsToList(unit);
 
-    //    List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
+        List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
 
-    //    foreach (int iteration in affectedSynergies)
-    //    {
-    //        synergies[iteration].PawnLost(unit.name);
-    //    }
-    //}
-    //public virtual void UnitInPlay(UnitStats unit)
-    //{
-    //    List<string> unitSynergies = SynergyStringsToList(unit);
+        foreach (int iteration in affectedSynergies)
+        {
+            synergies[iteration].UnitLost(unit.name);
+        }
+    }
+    public virtual void UnitInPlay(UnitStats unit)
+    {
+        List<string> unitSynergies = SynergyStringsToList(unit);
 
-    //    List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
+        List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
 
-    //    foreach (int iteration in affectedSynergies)
-    //    {
-    //        synergies[iteration].InPlay(unit.name);
-    //    }
-    //}
+        foreach (int iteration in affectedSynergies)
+        {
+            synergies[iteration].InPlay(unit.name);
+        }
+    }
 
-    
-    //public virtual void UnitOutOfPlay(UnitStats unit)
-    //{
-    //    List<string> unitSynergies = SynergyStringsToList(unit);
 
-    //    List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
+    public virtual void UnitOutOfPlay(UnitStats unit)
+    {
+        List<string> unitSynergies = SynergyStringsToList(unit);
 
-    //    foreach (int iteration in affectedSynergies)
-    //    {
-    //        synergies[iteration].OutOfPlay(unit.name);
-    //    }
-    //}
-    //public virtual void UnitSold(UnitStats unit, bool isInPlay)
-    //{
-    //    List<string> unitSynergies = SynergyStringsToList(unit);
+        List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
 
-    //    List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
+        foreach (int iteration in affectedSynergies)
+        {
+            synergies[iteration].OutOfPlay(unit.name);
+        }
+    }
+    public virtual void UnitSold(UnitStats unit, bool isInPlay)
+    {
+        List<string> unitSynergies = SynergyStringsToList(unit);
 
-    //    foreach (int iteration in affectedSynergies)
-    //    {
-    //        synergies[iteration].UnitSold(unit.name, isInPlay);
-    //    }
-    //}
-    //public virtual void AdjustmentFromUpgrade(UnitStats unit)
-    //{
-    //    List<string> unitSynergies = SynergyStringsToList(unit);
+        List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
 
-    //    List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
+        foreach (int iteration in affectedSynergies)
+        {
+            synergies[iteration].UnitSold(unit.name, isInPlay);
+        }
+    }
+    public virtual void AdjustmentFromUpgrade(UnitStats unit)
+    {
+        List<string> unitSynergies = SynergyStringsToList(unit);
 
-    //    foreach (int iteration in affectedSynergies)
-    //    {
-    //        synergies[iteration].AdjustmentFromUpgrade(unit.name);
-    //    }
-    //}
-    //public virtual void ApplySynergyEffects(List<GameObject> friendlyArmy, List<GameObject> hostileArmy)
-    //{
-    //    //clear the old list
-    //    //affectedSynergies.Clear();
-    //    //create a list of affected synergies
-    //    List<AffectedSynergy> affectedSynergies = new List<AffectedSynergy>();
+        List<int> affectedSynergies = SynergyIterationsAffected(unitSynergies);
 
-    //    List<UnitData> unitData = new List<UnitData>();
+        foreach (int iteration in affectedSynergies)
+        {
+            synergies[iteration].AdjustmentFromUpgrade(unit.name);
+        }
+    }
+    public virtual void ApplySynergyEffects(List<GameObject> friendlyArmy, List<GameObject> hostileArmy)
+    {
+        //clear the old list
+        //affectedSynergies.Clear();
+        //create a list of affected synergies
+        List<AffectedSynergy> affectedSynergies = new List<AffectedSynergy>();
 
-    //    foreach (GameObject unit in friendlyArmy)
-    //    {
-    //        UnitData data = new UnitData();
-    //        data.unit = unit;
-    //        data.unitStats = unit.GetComponent<Unit>().Stats;
+        List<UnitData> unitData = new List<UnitData>();
 
-    //        unitData.Add(data);
-    //    }
+        foreach (GameObject unit in friendlyArmy)
+        {
+            UnitData data = new UnitData();
+            data.unit = unit;
+            data.unitStats = unit.GetComponent<Unit>().Stats;
 
-    //    foreach (UnitData data in unitData)
-    //    {
-    //        if (data.unit == null)
-    //            continue;
+            unitData.Add(data);
+        }
 
-    //        List<string> unitSynergies = SynergyStringsToList(data.unitStats);
+        foreach (UnitData data in unitData)
+        {
+            if (data.unit == null)
+                continue;
 
-    //        foreach (string synName in unitSynergies)
-    //        {
-    //            bool duplicateFound = false;
-    //            AffectedSynergy reference = null;
+            List<string> unitSynergies = SynergyStringsToList(data.unitStats);
 
-    //            foreach (AffectedSynergy syn in affectedSynergies)
-    //            {
-    //                if (synName == syn.synergy.name)
-    //                {
-    //                    duplicateFound = true;
+            foreach (string synName in unitSynergies)
+            {
+                bool duplicateFound = false;
+                AffectedSynergy reference = null;
 
-    //                    reference = syn;
+                foreach (AffectedSynergy syn in affectedSynergies)
+                {
+                    if (synName == syn.synergy.name)
+                    {
+                        duplicateFound = true;
 
-    //                    break;
-    //                }
-    //            }
+                        reference = syn;
 
-    //            if (duplicateFound)
-    //            {
-    //                reference.AddNewUnit(data);
-    //            }
-    //            else
-    //            {
+                        break;
+                    }
+                }
 
-    //                Synergy newSynergy = null;
+                if (duplicateFound)
+                {
+                    reference.AddNewUnit(data);
+                }
+                else
+                {
 
-    //                foreach (Synergy syn in SynergyDatabaseScript.Synergies)
-    //                {
-    //                    if (syn.name == synName)
-    //                    {
-    //                        newSynergy = syn;
-    //                    }
-    //                }
+                    Synergy newSynergy = null;
 
-    //                if (newSynergy != null)
-    //                    affectedSynergies.Add(new AffectedSynergy(newSynergy, data));
-    //            }
+                    foreach (Synergy syn in SynergyDatabaseScript.Synergies)
+                    {
+                        if (syn.name == synName)
+                        {
+                            newSynergy = syn;
+                        }
+                    }
 
-    //        }
-    //    }
+                    if (newSynergy != null)
+                        affectedSynergies.Add(new AffectedSynergy(newSynergy, data));
+                }
 
-    //    foreach (AffectedSynergy affSyn in affectedSynergies)
-    //    {
-    //        if (affSyn.buffCounter > 0)
-    //        {
-    //            if (affSyn.synergy.enemyDebuff)
-    //            {
-    //                affSyn.applyBuffs(hostileArmy);
-    //            }
-    //            else
-    //            {
-    //                affSyn.applyBuffs(affSyn.affectedUnits);
-    //            }
-    //        }
-    //        else
-    //        {
-    //            continue;
-    //        }
-    //    }
-    //}
+            }
+        }
+
+        foreach (AffectedSynergy affSyn in affectedSynergies)
+        {
+            if (affSyn.buffCounter > 0)
+            {
+                if (affSyn.synergy.enemyDebuff)
+                {
+                    affSyn.applyBuffs(hostileArmy);
+                }
+                else
+                {
+                    affSyn.applyBuffs(affSyn.affectedUnits);
+                }
+            }
+            else
+            {
+                continue;
+            }
+        }
+    }
 
 
     protected virtual List<int> SynergyIterationsAffected(List<string> synergyList)
@@ -508,20 +519,20 @@ public class SynergyManager : Singleton<SynergyManager>
 
         return iterationsAffected;
     }
-    //protected virtual List<string> SynergyStringsToList(UnitStats unit)
-    //{
-    //    List<string> synergiesList = new List<string>();
+    protected virtual List<string> SynergyStringsToList(UnitStats unit)
+    {
+        List<string> synergiesList = new List<string>();
 
-    //    foreach (UnitStats.Trait trait in unit.traits)
-    //    {
-    //        synergiesList.Add(trait.ToString());
-    //    }
+        foreach (UnitStats.Trait trait in unit.traits)
+        {
+            synergiesList.Add(trait.ToString());
+        }
 
-    //    foreach (UnitStats.Class _class in unit.classes)
-    //    {
-    //        synergiesList.Add(_class.ToString());
-    //    }
+        foreach (UnitStats.Class _class in unit.classes)
+        {
+            synergiesList.Add(_class.ToString());
+        }
 
-    //    return synergiesList;
-    //}
+        return synergiesList;
+    }
 }

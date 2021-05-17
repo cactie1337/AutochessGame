@@ -14,6 +14,10 @@ public class GoldManager : Singleton<GoldManager>
     public virtual void Awake()
     {
         UIManagerScript = UIManager.Instance;
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. PLease add a UserInterfaceManager script to the Game Manager gameobject.");
+        }
         CurrentGold = 0;
     }
     public virtual bool SpendGold(int amount)

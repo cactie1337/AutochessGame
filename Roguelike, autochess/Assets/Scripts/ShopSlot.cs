@@ -43,8 +43,33 @@ public class ShopSlot : MonoBehaviour
 
     protected virtual void Awake()
     {
+        if(!Icon)
+        {
+            Debug.LogError("No Icon image reference set in the ShopSlot script on the" + gameObject.name + "prefab. Please set the reference in the inspector on the prefab.");
+        }
+        if (!Name)
+        {
+            Debug.LogError("No Name text reference set in the ShopSlot script on the" + gameObject.name + "prefab. Please set the reference in the inspector on the prefab.");
+        }
+        if (!TraitClass)
+        {
+            Debug.LogError("No OriginClass text reference set in the ShopSlot script on the" + gameObject.name + "prefab. Please set the reference in the inspector on the prefab.");
+        }
+        if (!GoldCostText)
+        {
+            Debug.LogError("No Gold Cost text reference set in the ShopSlot script on the" + gameObject.name + "prefab. Please set the reference in the inspector on the prefab.");
+        }
+
         BenchManagerScript = BenchManager.Instance;
+        if (!BenchManagerScript)
+        {
+            Debug.LogError("No BenchManager singleton instance found in the scene. Please add a BenchManager script to the GameManager gameobject before entering playmode.");
+        }
         GoldManagerScript = GoldManager.Instance;
+        if (!GoldManagerScript)
+        {
+            Debug.LogError("No GoldManager singleton instance found in the scene. Please add a GoldManager script to the GameManager gameobject before entering playmode.");
+        }
 
         myButton = GetComponent<Button>();
         myButton.onClick.AddListener(() => { OnPurchase(); });

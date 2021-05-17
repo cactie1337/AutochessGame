@@ -50,10 +50,33 @@ public class BoardTile : MonoBehaviour
 
     protected virtual void Awake()
     {
+        if(!HoverHighLight)
+        {
+            Debug.LogError("No hoverHighlight reference set on the ChessBoardTile script on Chess Board Tile prefab. Please drag 'Highlight' child on" +
+                "Chess Board Tile prefab into the ChessBoardTile script in the inspector.");
+        }
         UnitDragScript = UnitDragManager.Instance;
+        if (!UnitDragScript)
+        {
+            Debug.LogError("No PawnDragManager singleton instance found in the scene. Please add a PawnDragManager script to the Game Manager gameobject before entering playmode!");
+        }
         ArmyManagerScript = ArmyManager.Instance;
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager singleton instance found in the scene. Please add a ArmyManager script to the Game Manager gameobject before entering playmode!");
+        }
         GameManager = GameManager.Instance;
-        UIManagerScript = UIManager.Instance; 
+        if (!GameManager)
+        {
+            Debug.LogError("No GameManager singleton instance found in the scene. Please add an AutoBattles.GameManager script to the game manager gameobject " +
+                "before entering playmode!");
+        }
+        UIManagerScript = UIManager.Instance;
+        if (!UIManagerScript)
+        {
+            Debug.LogError("No UserInterfaceManager singleton instance found in the scene. Please add an AutoBattles.GameManager script to the game manager gameobject " +
+                "before entering playmode!");
+        }
     }
 
 

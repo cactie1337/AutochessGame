@@ -32,8 +32,27 @@ public class BoardManager : Singleton<BoardManager>
 
     protected virtual void Awake()
     {
+        if (!BoardTransform)
+        {
+            Debug.LogError("Please drag your chess board transform into the ChessBoardManager script located on the Game Manager gameobject.");
+            return;
+        }
+        if (!PlayerBoardTilePrefab)
+        {
+            Debug.LogError("No player chess board tile prefab set in the ChessBoardManager script located on the Game Manager gameobject.");
+            return;
+        }
+        if (!EnemyBoardTilePrefab)
+        {
+            Debug.LogError("No enemy chess board tile prefab set in the ChessBoardManager script located on the Game Manager gameobject.");
+            return;
+        }
         ArmyManagerScript = ArmyManager.Instance;
-       
+        if (!ArmyManagerScript)
+        {
+            Debug.LogError("No ArmyManager script found, please add one to the game manager gameobject.");
+        }
+
         CreateBoardTiles();
     }
 

@@ -149,10 +149,143 @@ public class UIManager : Singleton<UIManager>
     protected Text CurrentRoundText { get => currentRoundText; set => currentRoundText = value; }
     public Transform UnitHealthBarCanvas { get => unitHealthBarCanvas; protected set => unitHealthBarCanvas = value; }
 
+    #region Awake
     protected virtual void Awake()
     {
+
         ShopSlotCount = 5;
+        if (!ShopSlotPrefab)
+        {
+            Debug.LogError("Please set a reference to the ShopSlotPrefab in the UserInterfaceManager script located on the" + gameObject.name + " gameobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ShopSlotGrid)
+        {
+            Debug.LogError("Please set a reference to the ShopSlotGrid in the UserInterfaceManager script located on the" + gameObject.name + " gameobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ShopMenu.menuTransform)
+        {
+            Debug.LogError("No menu transform reference set for the ShopMenu menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ShopMenu.hiddenPosition)
+        {
+            Debug.LogError("No hidden position reference set for the ShopMenu menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ShopMenu.activePosition)
+        {
+            Debug.LogError("No active position reference set for the ShopMenu menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!CurrentLevelText)
+        {
+            Debug.LogError("No reference set for 'CurrentLevelText' text component. Please set that in the UserInterfaceManager script on the Game Manager gameobject before entering playmode!");
+        }
+        if (!CurrentExpText)
+        {
+            Debug.LogError("No reference set for 'CurrentExpText' text component. Please set that in the UserInterfaceManager script on the Game Manager gameobject before entering playmode!");
+        }
+        if (!CurrentGoldText)
+        {
+            Debug.LogError("Please insert a reference to the text element that will display the players current gold on the UserInterfaceManager script on the Game Manager gameobject.");
+        }
+        if (!TrashPanel.menuTransform)
+        {
+            Debug.LogError("No menu transform reference set for the TrashPanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!TrashPanel.hiddenPosition)
+        {
+            Debug.LogError("No hidden position reference set for the TrashPanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!TrashPanel.activePosition)
+        {
+            Debug.LogError("No active position reference set for the TrashPanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!StatsPanel.menuTransform)
+        {
+            Debug.LogError("No menu transform reference set for the StatsPanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!StatsPanel.hiddenPosition)
+        {
+            Debug.LogError("No hidden position reference set for the StatsPanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!StatsPanel.activePosition)
+        {
+            Debug.LogError("No active position reference set for the StatsPanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!TooltipPanelDesktop.menuTransform)
+        {
+            Debug.LogError("No menu transform reference set for the TooltipPanelDesktop menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!TooltipPanelDesktop.hiddenPosition)
+        {
+            Debug.LogError("No hidden position reference set for the TooltipPanelDesktop menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!TooltipPanelDesktop.activePosition)
+        {
+            Debug.LogError("No active position reference set for the TooltipPanelDesktop menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ArmyCountDisplay.menuTransform)
+        {
+            Debug.LogError("No menu transform reference set for the ArmyCountDisplay menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ArmyCountDisplay.hiddenPosition)
+        {
+            Debug.LogError("No hidden position reference set for the ArmyCountDisplay menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ArmyCountDisplay.activePosition)
+        {
+            Debug.LogError("No active position reference set for the ArmyCountDisplay menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!ArmyCountText)
+        {
+            Debug.LogError("Please set a reference to the text component 'ArmyCountText' in the UserInterfaceManager script located on the Game Manager gameobject before entering playmode!");
+        }
+        if (!WinnerMessagePanel.menuTransform)
+        {
+            Debug.LogError("No menu transform reference set for the WinnerMessagePanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!WinnerMessagePanel.hiddenPosition)
+        {
+            Debug.LogError("No hidden position reference set for the WinnerMessagePanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!WinnerMessagePanel.activePosition)
+        {
+            Debug.LogError("No active position reference set for the WinnerMessagePanel menuobject in the UserInterfaceManager script located on the" + gameObject.name + " gamobject." +
+                "Please set this reference in the inspector before entering playmode.");
+        }
+        if (!WinnerMessageText)
+        {
+            Debug.LogError("Please set a reference to the text component 'WinnerMessageText' in the UserInterfaceManager script located on the Game Manager gameobject before entering playmode!");
+
+        }
+        if (!CurrentRoundText)
+        {
+            Debug.LogError("Please set a reference to the text component 'CurrentRoundText' in the UserInterfaceManager script located on the Game Manager gameobject before entering playmode!");
+        }
+        if (!UnitHealthBarCanvas)
+        {
+            Debug.LogError("No PawnHealthBarCanvas reference set. Please set a reference to a canvas which will hold all the pawn health bars before entering playmode! This is found on the UserInterfaceManager script" +
+                "on the " + gameObject.name + "gameobject.");
+        }
     }
+    #endregion
     public virtual void UpdateCurrentGoldText(int amount)
     {
         CurrentGoldText.text = amount.ToString();

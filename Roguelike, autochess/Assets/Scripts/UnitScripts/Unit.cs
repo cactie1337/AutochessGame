@@ -64,6 +64,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     [Tooltip("Bonus attack speed")]
     private float bonusAttackSpeed;
+    [Tooltip("Bonus damage")]
+    private int bonusDamage;
 
     [Header("EXACT FROM SYNERGIES BONUS STATS")]
     [Header("DO NOT ALTER HERE")]
@@ -74,6 +76,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     [Tooltip("Bonus attack speed")]
     private float synergies_bonusAttackSpeed;
+    [Tooltip("Bonus damage")]
+    private int synergies_bonusDamage;
 
     public UnitStats Stats { get => stats; protected set => stats = value; }
 
@@ -97,11 +101,18 @@ public class Unit : MonoBehaviour
     // bonus stats
     public float BonusAttackSpeed { get => bonusAttackSpeed; set => bonusAttackSpeed = value; }
     public int BonusArmor { get => bonusArmor; set => bonusArmor = value; }
+    public int BonusDamage { get => bonusDamage; set => bonusDamage = value; }
 
     // exact synergy stats
 
     public float Synergy_BonusAttackSpeed { get => synergies_bonusAttackSpeed; set => synergies_bonusAttackSpeed = value; }
     public int Synergy_BonusArmor { get => synergies_bonusArmor; set => synergies_bonusArmor = value; }
+    public int Synergy_BonusDamage { get => synergies_bonusDamage; set => synergies_bonusDamage = value; }
+
+    protected virtual void Awake()
+    {
+        CalculateAllStats();
+    }
 
     public virtual void ClearSynergyBonus()
     {
