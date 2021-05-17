@@ -164,6 +164,7 @@ public class GameManager : Singleton<GameManager>
         if (InCombat)
             return;
 
+
         UIManagerScript.ArmyCountDisplay.Close();
         UIManagerScript.CloseShopMenu();
 
@@ -212,6 +213,9 @@ public class GameManager : Singleton<GameManager>
         {
             unit.GetComponent<Status>().BeginCombat();
         }
+
+        InCombat = true;
+
         ArmyManagerScript.CheckIfEnemyWonRound();
         ArmyManagerScript.CheckIfPlayerWonRound();
     }

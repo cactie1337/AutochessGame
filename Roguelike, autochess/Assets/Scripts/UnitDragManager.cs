@@ -342,20 +342,20 @@ public class UnitDragManager : Singleton<UnitDragManager>
         if(TileHoveredOver.HasActiveUnit())
         {
             ArmyManagerScript.RemoveActiveUnitFromPlayerRoster(TileHoveredOver.ActiveUnit);
-            //SynergyManagerScript.UnitOutOfPlay(TileHoveredOver.ActiveUnit.GetComponent<Unit>().Stats);
+            SynergyManagerScript.UnitOutOfPlay(TileHoveredOver.ActiveUnit.GetComponent<Unit>().Stats);
         }
         ArmyManagerScript.AddActiveUnitToPlayerRoster(UnitBeingDragged);
-        //SynergyManagerScript.UnitInPlay(UnitBeingDragged.GetComponent<Unit>().Stats);
+        SynergyManagerScript.UnitInPlay(UnitBeingDragged.GetComponent<Unit>().Stats);
     }
     protected virtual void SyncArmyChangesFromBoard()
     {
         if(TileHoveredOver.HasActiveUnit())
         {
             ArmyManagerScript.AddActiveUnitToPlayerRoster(TileHoveredOver.ActiveUnit);
-            //SynergyManagerScript.UnitInPlay(TileHoveredOver.ActiveUnit.GetComponent<Unit>().Stats);
+            SynergyManagerScript.UnitInPlay(TileHoveredOver.ActiveUnit.GetComponent<Unit>().Stats);
         }
         ArmyManagerScript.RemoveActiveUnitFromPlayerRoster(UnitBeingDragged);
-        //SynergyManagerScript.UnitOutOfPlay(UnitBeingDragged.GetComponent<Unit>().Stats);
+        SynergyManagerScript.UnitOutOfPlay(UnitBeingDragged.GetComponent<Unit>().Stats);
     }
     protected virtual void SellDraggedUnit(bool draggedFromBoard)
     {
@@ -363,7 +363,7 @@ public class UnitDragManager : Singleton<UnitDragManager>
         {
             ArmyManagerScript.RemoveActiveUnitFromPlayerRoster(UnitBeingDragged);
         }
-        //SynergyManagerScript.UnitSold(UnitBeingDragged.GetComponent<Unit>().Stats, draggedFromBoard);
+        SynergyManagerScript.UnitSold(UnitBeingDragged.GetComponent<Unit>().Stats, draggedFromBoard);
         ArmyManagerScript.RemoveUnitFromTotalPlayerRoster(UnitBeingDragged);
         Status status = UnitBeingDragged.GetComponent<Status>();
         GoldManagerScript.GainGold(status.GoldWorth);

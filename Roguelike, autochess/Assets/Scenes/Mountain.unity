@@ -30019,7 +30019,7 @@ PrefabInstance:
     - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
         type: 3}
       propertyPath: rosters.Array.size
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
         type: 3}
@@ -30027,6 +30027,59 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
         type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 560adec5b0433394593b4469a2d616b0,
+        type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
+    - target: {fileID: 8432203223137777566, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rosters.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd8653357e032f44974651288d3d383,
+        type: 2}
+    - target: {fileID: 8432203223137777567, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: endRoundLeewayDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8432203223137777633, guid: 19fa2648af530df42827288e219e1287,
         type: 3}
       propertyPath: m_Name
