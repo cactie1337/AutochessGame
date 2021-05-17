@@ -74,11 +74,11 @@ public class ExperienceManager : Singleton<ExperienceManager>
     {
         if(CurrentLevel == 3)
         {
-            MaxExperience += 1;
+            MaxExperience = 0;
         }
         else if (CurrentLevel > 3)
         {
-            MaxExperience += (CurrentLevel - 3) * 2;
+            MaxExperience = 0;
         }
 
         UserInterface.UpdateCurrentExpText(CurrentExperience, MaxExperience);

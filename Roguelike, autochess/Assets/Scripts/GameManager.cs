@@ -127,13 +127,13 @@ public class GameManager : Singleton<GameManager>
         //set to 2 by default if 0 at runtime
         if (RerollCost == 0)
         {
-            RerollCost = 2;
+            RerollCost = 0;
         }
 
         //make sure we dont accidently start the player with no money
         if (StartingGold == 0)
         {
-            StartingGold = 5;
+            StartingGold = 100000;
         }
 
         //Setup Scene
@@ -236,6 +236,7 @@ public class GameManager : Singleton<GameManager>
         {
             RoundIsEnding = true;
             EndRound();
+            SceneManager.LoadScene(0);
         }
     }
     protected virtual void EndRound()
@@ -334,7 +335,7 @@ public class GameManager : Singleton<GameManager>
     }
     public virtual void PurchaseExp()
     {
-        if (GoldManagerScript.SpendGold(4))
+        if (GoldManagerScript.SpendGold(0))
         {
             ExpManager.GainExperience(4);
         }

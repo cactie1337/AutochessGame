@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public sc SceneChanger;
+    public GameManager gm;
     public void quitButton()
     {
         Application.Quit();
@@ -14,5 +15,6 @@ public class MainMenu : MonoBehaviour
     {
         SceneChanger = FindObjectOfType(typeof(sc)) as sc;
         SceneChanger.ToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 }
