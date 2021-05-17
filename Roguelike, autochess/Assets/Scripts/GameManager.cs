@@ -258,12 +258,12 @@ public class GameManager : Singleton<GameManager>
         }
         else if (PlayerArmyWon)
         {
-            UIManagerScript.UpdateWinnerMessageText("Player won!");
+            UIManagerScript.UpdateWinnerMessageText("Your army wins the fight.");
             GoldManagerScript.GainGold(1);
         }
         else if (EnemyArmyWon)
         {
-            UIManagerScript.UpdateWinnerMessageText("Enemy won!");
+            UIManagerScript.UpdateWinnerMessageText("Enemy army wins the fight.");
         }
         else
         {
