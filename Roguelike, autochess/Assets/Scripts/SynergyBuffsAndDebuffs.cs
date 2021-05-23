@@ -69,4 +69,25 @@ public class SynergyBuffsAndDebuffs : Singleton<SynergyBuffsAndDebuffs>
 
     }
     #endregion
+    #region Ranger
+    [Header("Ranger synergy")]
+    [SerializeField]
+    private Synergy rangerSynergy;
+    protected Synergy RangerSynergy { get => rangerSynergy; set => rangerSynergy = value; }
+    protected virtual void InitializeRangerSynergy()
+    {
+        if(!RangerSynergy)
+        {
+            Debug.LogError("No 'RangerSynergy' reference set on the SynergyBuffsAndDebuffs script on the GameManager gameobject. Please set a reference to this synergy before entering playmode!");
+            return;
+        }
+        RangerSynergy.buff1 = RANGER_BUFF_1;
+        RangerSynergy.buff2 = Empty;
+        RangerSynergy.buff3 = Empty;
+    }
+    public virtual void RANGER_BUFF_1(List<GameObject> units)
+    {
+        
+    }
+    #endregion
 }

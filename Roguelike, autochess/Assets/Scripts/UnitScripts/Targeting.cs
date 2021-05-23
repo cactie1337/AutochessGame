@@ -9,9 +9,14 @@ public class Targeting : MonoBehaviour
     private GameObject previousTarget;
     private AutoAttack targetAttackScript;
     private Status targetStatus;
+    private Status targetStatus1;
     private HealthAndMana targetHealthScript;
     private Movement targetsMovementScript;
     private Unit targetsUnitScript;
+
+    
+    [SerializeField]
+    private int targetCount;
 
     private Status statusScript;
     private ArmyManager armyManagerScript;
@@ -19,10 +24,12 @@ public class Targeting : MonoBehaviour
     private Unit unitScript;
     private AutoAttack autoAttackScript;
 
+    public int TargetCount { get => targetCount; protected set => targetCount = value; }
     public GameObject Target { get => target; protected set => target = value; }
     protected GameObject PreviousTarget { get => previousTarget; set => previousTarget = value; }
     public AutoAttack TargetsAttackScript { get => targetAttackScript; protected set => targetAttackScript = value; }
     public Status TargetStatus { get => targetStatus; protected set => targetStatus = value; }
+    public Status TargetStatus1 { get => targetStatus1; protected set => targetStatus1 = value; }
     public HealthAndMana TargetHealthScript { get => targetHealthScript; set => targetHealthScript = value; }
     public Movement TargetsMovementScript { get => targetsMovementScript; set => targetsMovementScript = value; }
     public Unit TargetsUnitScript { get => targetsUnitScript; set => targetsUnitScript = value; }
@@ -92,7 +99,9 @@ public class Targeting : MonoBehaviour
 
             RangeCheck();
         }
+        
     }
+    
     public virtual void DelayedSearchForNewTarget(float timer)
     {
         Invoke("SearchForNewTarget", timer);

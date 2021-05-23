@@ -30459,8 +30459,14 @@ PrefabInstance:
     - target: {fileID: 7918118806654571512, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
       propertyPath: units.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7918118806654571512, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
+        type: 3}
+      propertyPath: units.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 03ec7a8821af5c14c93c6103700752f3,
+        type: 2}
     - target: {fileID: 7918118806654571513, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
       propertyPath: m_RootOrder
@@ -30519,7 +30525,7 @@ PrefabInstance:
     - target: {fileID: 7918118806654571515, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
       propertyPath: synergies.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7918118806654571515, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
@@ -30532,6 +30538,12 @@ PrefabInstance:
       propertyPath: synergies.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 71f9593b13e4c5d47817ad8269a6b0e5,
+        type: 2}
+    - target: {fileID: 7918118806654571515, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
+        type: 3}
+      propertyPath: synergies.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ec7c09f2c80d0a40a5a66bc7dae1311,
         type: 2}
     - target: {fileID: 7918118806654571519, guid: 2b02ffc00f3c2f546a247e1edd532f7a,
         type: 3}
@@ -30556,13 +30568,17 @@ PrefabInstance:
         type: 3}
       propertyPath: synergies.Array.data[0].synergy
       value: 
-      objectReference: {fileID: 11400000, guid: f217893472e65b84e84445ec55672ac4,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8432203223137777556, guid: 19fa2648af530df42827288e219e1287,
         type: 3}
       propertyPath: synergies.Array.data[1].synergy
       value: 
-      objectReference: {fileID: 11400000, guid: 71f9593b13e4c5d47817ad8269a6b0e5,
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432203223137777557, guid: 19fa2648af530df42827288e219e1287,
+        type: 3}
+      propertyPath: rangerSynergy
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ec7c09f2c80d0a40a5a66bc7dae1311,
         type: 2}
     - target: {fileID: 8432203223137777557, guid: 19fa2648af530df42827288e219e1287,
         type: 3}
