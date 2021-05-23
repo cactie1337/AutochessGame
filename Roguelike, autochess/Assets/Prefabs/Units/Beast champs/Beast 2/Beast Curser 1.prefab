@@ -190,6 +190,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beast Curser 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 449ecdeac05ef0c4daac072621c0da4c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -8367705006879899164, guid: f9620d5659f9af745b7400b18f0eec9a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449ecdeac05ef0c4daac072621c0da4c, type: 3}
 --- !u!1 &3426678035411110668 stripped

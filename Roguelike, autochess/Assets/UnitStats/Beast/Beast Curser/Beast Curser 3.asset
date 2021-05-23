@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beast Curser 3
   m_EditorClassIdentifier: 
   name: Beast Curser
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 45c547e8ca42da448a437b45e877ba40, type: 3}
   unit: {fileID: 2728435564180977601, guid: 3d55388d94320f948b9a0cd75654b72d, type: 3}
   starRating: 2
   unitQuality: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shocktouch Wizard 3
   m_EditorClassIdentifier: 
   name: Shocktouch Wizard
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 8fa490ea614a80049b4ec113102cd40e, type: 3}
   unit: {fileID: 8424522114770345017, guid: 3243fb0b29c61da43a8dd311cb73addc, type: 3}
   starRating: 2
   unitQuality: 1
@@ -24,7 +24,7 @@ MonoBehaviour:
     type: 3}
   minAttackDamage: 80
   maxAttackDamage: 90
-  baseAttackTime: 0.5
+  baseAttackTime: 1
   attackPoint: 0.3
   attackRange: 3
   manaGeneratedPerAttack: 10

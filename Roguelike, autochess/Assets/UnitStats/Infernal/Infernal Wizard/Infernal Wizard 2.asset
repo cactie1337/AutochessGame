@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Infernal Wizard 2
   m_EditorClassIdentifier: 
   name: Infernal Wizard
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: d00081d9e8601c240b0ec9cac1c3e21d, type: 3}
   unit: {fileID: 7691255182749108652, guid: efe43bbf423b4064ba99579774ab7a43, type: 3}
   starRating: 1
   unitQuality: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
     type: 3}
   minAttackDamage: 60
   maxAttackDamage: 90
-  baseAttackTime: 0.8
+  baseAttackTime: 1
   attackPoint: 0.3
   attackRange: 5
   manaGeneratedPerAttack: 15

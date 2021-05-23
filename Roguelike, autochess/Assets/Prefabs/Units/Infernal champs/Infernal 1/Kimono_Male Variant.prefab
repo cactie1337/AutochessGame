@@ -27,6 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  targetCount: 0
 --- !u!114 &3224147971069629229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +195,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 3a7d9ad0c87861b4ca1b3fc214ceb412,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ef1548d74fa7964b894e039233bc009, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3a7d9ad0c87861b4ca1b3fc214ceb412,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07d14a8557c025f4489084535e492966, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3a7d9ad0c87861b4ca1b3fc214ceb412,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: d63e33a00ccc9e1428293179a82bf5f7, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3a7d9ad0c87861b4ca1b3fc214ceb412,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4ebb566957b0254eb44f80719064b3e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7d9ad0c87861b4ca1b3fc214ceb412, type: 3}
 --- !u!1 &4490611297153463649 stripped

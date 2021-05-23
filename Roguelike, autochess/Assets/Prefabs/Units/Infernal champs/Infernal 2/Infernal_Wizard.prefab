@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 775222503772047135}
   - component: {fileID: -1793099029726339502}
   m_Layer: 0
-  m_Name: Infernal_Ranger1
+  m_Name: Infernal_Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,6 +255,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elf
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 3da28e5fa923a9b46a6c596560856801,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d63e33a00ccc9e1428293179a82bf5f7, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3da28e5fa923a9b46a6c596560856801,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07d14a8557c025f4489084535e492966, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3da28e5fa923a9b46a6c596560856801,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ef1548d74fa7964b894e039233bc009, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3da28e5fa923a9b46a6c596560856801,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: d63e33a00ccc9e1428293179a82bf5f7, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3da28e5fa923a9b46a6c596560856801,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4ebb566957b0254eb44f80719064b3e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3da28e5fa923a9b46a6c596560856801, type: 3}
 --- !u!4 &6202495488752054077 stripped

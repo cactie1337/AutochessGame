@@ -205,6 +205,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shocktouch Specialist 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 3c0e3f9262295544ab454d61b2dcf6c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07d14a8557c025f4489084535e492966, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3c0e3f9262295544ab454d61b2dcf6c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fb928ca969cb914b917117c513dc94c, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3c0e3f9262295544ab454d61b2dcf6c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6135bd078ef246347b40c951eea93aef, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3c0e3f9262295544ab454d61b2dcf6c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74d22b86361fa664e9a254fef164fa93, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3c0e3f9262295544ab454d61b2dcf6c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74d22b86361fa664e9a254fef164fa93, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3c0e3f9262295544ab454d61b2dcf6c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4ebb566957b0254eb44f80719064b3e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c0e3f9262295544ab454d61b2dcf6c9, type: 3}
 --- !u!1 &6465567821729946086 stripped

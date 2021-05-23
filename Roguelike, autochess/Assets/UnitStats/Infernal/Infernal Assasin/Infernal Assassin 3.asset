@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Infernal Assassin 3
   m_EditorClassIdentifier: 
   name: Infernal Assassin
-  icon: {fileID: 21300000, guid: ea70de4177ea7974dbc39b9c018f8041, type: 3}
+  icon: {fileID: 21300000, guid: 70938c54dfb3b1742a8792d2b77ea25f, type: 3}
   unit: {fileID: 1536652603728880275, guid: 49a6dad2bc589a24f8bad27122470225, type: 3}
   starRating: 2
   unitQuality: 0

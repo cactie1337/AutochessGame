@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beast Warrior 3
   m_EditorClassIdentifier: 
   name: Beast Warrior
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a34a85f102ddb9843ae5a27411be879a, type: 3}
   unit: {fileID: 7798489849055610628, guid: 054f802148e506346beaeea413c3e104, type: 3}
   starRating: 2
   unitQuality: 0

@@ -190,6 +190,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shocktouch Wizard 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 92719360299fdb94eaafbf3d29b67b4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fb928ca969cb914b917117c513dc94c, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 92719360299fdb94eaafbf3d29b67b4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 07d14a8557c025f4489084535e492966, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 92719360299fdb94eaafbf3d29b67b4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 74d22b86361fa664e9a254fef164fa93, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 92719360299fdb94eaafbf3d29b67b4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4ebb566957b0254eb44f80719064b3e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92719360299fdb94eaafbf3d29b67b4d, type: 3}
 --- !u!1 &303725242275436586 stripped
