@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Wave 3
   m_EditorClassIdentifier: 
   roster:
-  - {fileID: 11400000, guid: 0193770f4ec9a5a49a86c3548b76da67, type: 2}
-  - {fileID: 11400000, guid: 0193770f4ec9a5a49a86c3548b76da67, type: 2}
-  - {fileID: 11400000, guid: 0193770f4ec9a5a49a86c3548b76da67, type: 2}
+  - {fileID: 11400000, guid: 3c8d0af32a63d46419121c604e8bcffe, type: 2}
+  - {fileID: 11400000, guid: b652a342d9b843b45a9e0c7c83c3b2c4, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3517cd49e06dbc145bce1386d7b78305, type: 2}
+  - {fileID: 11400000, guid: 3c8d0af32a63d46419121c604e8bcffe, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
