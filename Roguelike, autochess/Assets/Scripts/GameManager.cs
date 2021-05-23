@@ -332,7 +332,7 @@ public class GameManager : Singleton<GameManager>
             newUnits[i] = UnitDatabaseScript.Units[randomIndex];
         }
         UIManagerScript.DisplayNewShopLineUp(newUnits);
-        //UIManagerScript.OpenShopMenu();
+        UIManagerScript.OpenShopMenu();
     }
     public virtual void PurchaseExp()
     {
