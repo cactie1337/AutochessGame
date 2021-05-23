@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4609541511383730159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7793454744793770236, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 789fe0f3174d97b488eb4f0ba9e6162c,
+        type: 2}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5976733007675425628, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465567821729946086, guid: ae09559377f5736448ff30b614dff316,
+        type: 3}
+      propertyPath: m_Name
+      value: Shocktouch Specialist 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae09559377f5736448ff30b614dff316, type: 3}

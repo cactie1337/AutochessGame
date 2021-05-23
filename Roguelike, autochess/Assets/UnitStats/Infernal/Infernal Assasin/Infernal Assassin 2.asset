@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11840cf4e0fa4c9408ed0cf305a514b3, type: 3}
+  m_Name: Infernal Assassin 2
+  m_EditorClassIdentifier: 
+  name: Infernal Assassin
+  icon: {fileID: 21300000, guid: ea70de4177ea7974dbc39b9c018f8041, type: 3}
+  unit: {fileID: 2078044959321759342, guid: bef48821fedf1f34a93b3472571d325a, type: 3}
+  starRating: 1
+  unitQuality: 0
+  upgradedUnit: {fileID: 11400000, guid: da756bdb80f910f4cba13595bd0085fb, type: 2}
+  traits: 00000000
+  classes: 00000000
+  projectilePrefab: {fileID: 0}
+  minAttackDamage: 60
+  maxAttackDamage: 90
+  baseAttackTime: 0.8
+  attackPoint: 0.3
+  attackRange: 1
+  manaGeneratedPerAttack: 15
+  movementSpeed: 9
+  health: 700
+  mana: 60
+  armor: 20

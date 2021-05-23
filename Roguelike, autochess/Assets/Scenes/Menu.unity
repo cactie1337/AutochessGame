@@ -3258,6 +3258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneChanger: {fileID: 0}
+  gm: {fileID: 0}
 --- !u!4 &1031919663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97570262580388e4180dfc28f136fec8,

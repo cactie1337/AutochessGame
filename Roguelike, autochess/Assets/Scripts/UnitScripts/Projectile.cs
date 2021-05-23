@@ -49,7 +49,7 @@ public class Projectile : MonoBehaviour
 
             if (distance <= 0.02f)
             {
-                DealDamageAndDestruct();
+                 DealDamageAndDestruct();
             }
         }
     }
@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
     protected virtual void DealDamageAndDestruct()
     {
         TargetHealthScript.TakeDamage(Damage);
-
+        
         Destroy(gameObject);
     }
 }

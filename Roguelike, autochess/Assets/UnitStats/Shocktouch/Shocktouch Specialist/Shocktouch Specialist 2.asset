@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11840cf4e0fa4c9408ed0cf305a514b3, type: 3}
+  m_Name: Shocktouch Specialist 2
+  m_EditorClassIdentifier: 
+  name: Shocktouch Specialist
+  icon: {fileID: 0}
+  unit: {fileID: 7368502760768609801, guid: 68fd35bc3fd0c9846aec7a0aefaab517, type: 3}
+  starRating: 1
+  unitQuality: 2
+  upgradedUnit: {fileID: 11400000, guid: 2c50d9b3cafc7624bb0958fc403a7e49, type: 2}
+  traits: 04000000
+  classes: 04000000
+  projectilePrefab: {fileID: 0}
+  minAttackDamage: 40
+  maxAttackDamage: 50
+  baseAttackTime: 0.9
+  attackPoint: 0.3
+  attackRange: 1
+  manaGeneratedPerAttack: 10
+  movementSpeed: 9
+  health: 600
+  mana: 90
+  armor: 20

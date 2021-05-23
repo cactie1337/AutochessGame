@@ -33,6 +33,7 @@ public class GameManager : Singleton<GameManager>
     private GoldManager goldManagerScript;
     private ExperienceManager expManager;
     private SynergyManager synergyManagerScript;
+    private MainMenu mainMenu;
     
 
     /// <summary>
@@ -59,6 +60,7 @@ public class GameManager : Singleton<GameManager>
     protected SynergyManager SynergyManagerScript { get => synergyManagerScript; set => synergyManagerScript = value; }
     protected BenchManager BenchManagerScript { get => benchManager; set => benchManager = value; }
 
+    protected MainMenu MainMenu { get => mainMenu; set => mainMenu = value; }
 
     protected virtual void Awake()
     {
@@ -236,7 +238,6 @@ public class GameManager : Singleton<GameManager>
         {
             RoundIsEnding = true;
             EndRound();
-            SceneManager.LoadScene(0);
         }
     }
     protected virtual void EndRound()

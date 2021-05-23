@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11840cf4e0fa4c9408ed0cf305a514b3, type: 3}
+  m_Name: Beast Warrior 3
+  m_EditorClassIdentifier: 
+  name: Beast Warrior
+  icon: {fileID: 0}
+  unit: {fileID: 7798489849055610628, guid: 054f802148e506346beaeea413c3e104, type: 3}
+  starRating: 2
+  unitQuality: 0
+  upgradedUnit: {fileID: 0}
+  traits: 03000000
+  classes: 02000000
+  projectilePrefab: {fileID: 0}
+  minAttackDamage: 45
+  maxAttackDamage: 80
+  baseAttackTime: 0.7
+  attackPoint: 0.3
+  attackRange: 1
+  manaGeneratedPerAttack: 10
+  movementSpeed: 9
+  health: 1000
+  mana: 60
+  armor: 45

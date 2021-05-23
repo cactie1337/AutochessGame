@@ -176,6 +176,9 @@ public class HealthAndMana : MonoBehaviour
         float mitigatedDamage = damage * (UnitScript.PhysDmgReduction / 100);
         float actualDamage = damage - mitigatedDamage;
 
+        if (actualDamage < 0)
+            return;
+
         CurrentHealth -= actualDamage;
 
         if(CurrentHealth <= 0)
